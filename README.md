@@ -3,11 +3,15 @@
 Welcome to the Restaurant Online Ordering App repository! This project aims to provide an online ordering platform for restaurants, 
 allowing users to select restaurants, dishes, and extras, and place their orders seamlessly.
 
+## Language Warning
+
+**Attention! This project is written and intended for Spanish speakers.**
+
 ## Features
 --Server App:
 - Registry of Restaurants, Dishes, Extras, and Clients.
 - Registry of dish association with a Restaurant.
-- View of all available Restaurants, Dishes, Extras, Dish associations and Clients.
+- View all available Restaurants, Dishes, Extras, Dish associations and Clients.
 
 --Client App:
 - Browse and select restaurants from a list.
@@ -29,7 +33,7 @@ To run the Restaurant Online Ordering App locally, follow these steps:
 3. Make sure that the database path concurs with the one instated in the App.config of the Server app.
    By default, the app uses the local or default database of the machine. 
 5. Open the server and client projects on your preferred IDE.
-6. Alternatively, use the Server.exe and Client.exe files contained in the Release folder.
+6. Alternatively, you can use the Server.exe and Client.exe files in the Release folder.
 
 ## Usage
 
