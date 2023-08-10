@@ -1,0 +1,6 @@
+C:\Users\serra\Desktop\c#\ClassLibraryRestUned\ClassLibraryRestUned\bin\Debug\ClassLibraryRestUned.dll
+C:\Users\serra\Desktop\c#\ClassLibraryRestUned\ClassLibraryRestUned\bin\Debug\ClassLibraryRestUned.pdb
+C:\Users\serra\Desktop\c#\ClassLibraryRestUned\ClassLibraryRestUned\obj\Debug\ClassLibraryRestUned.csproj.AssemblyReference.cache
+C:\Users\serra\Desktop\c#\ClassLibraryRestUned\ClassLibraryRestUned\obj\Debug\ClassLibraryRestUned.csproj.CoreCompileInputs.cache
+C:\Users\serra\Desktop\c#\ClassLibraryRestUned\ClassLibraryRestUned\obj\Debug\ClassLibraryRestUned.dll
+C:\Users\serra\Desktop\c#\ClassLibraryRestUned\ClassLibraryRestUned\obj\Debug\ClassLibraryRestUned.pdb
