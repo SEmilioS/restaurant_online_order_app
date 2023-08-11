@@ -1,7 +1,4 @@
-﻿///Elaborado por Emilio Serrano Sánchez
-///Proyecto para la asignatura Programacion Avanzada 00830
-///Universidad Estatal a Distancia, 2-2023
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using RestUnedClases;
 using System;
 using System.Net;

@@ -1,7 +1,4 @@
-﻿///Elaborado por Emilio Serrano Sánchez
-///Proyecto para la asignatura Programacion Avanzada 00830
-///Universidad Estatal a Distancia, 2-2023
-using RestUnedClases;
+﻿using RestUnedClases;
 using System;
 using System.Data.SqlClient;
 using System.Threading;
