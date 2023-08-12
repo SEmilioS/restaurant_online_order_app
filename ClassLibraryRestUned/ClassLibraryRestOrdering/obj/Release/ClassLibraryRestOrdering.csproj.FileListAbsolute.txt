@@ -1,0 +1,6 @@
+C:\Users\serra\Desktop\c#\RESTUNEDAPP\ClassLibraryRestUned\ClassLibraryRestOrdering\obj\Release\ClassLibraryRestOrdering.csproj.AssemblyReference.cache
+C:\Users\serra\Desktop\c#\RESTUNEDAPP\ClassLibraryRestUned\ClassLibraryRestOrdering\obj\Release\ClassLibraryRestOrdering.csproj.CoreCompileInputs.cache
+C:\Users\serra\Desktop\c#\RESTUNEDAPP\ClassLibraryRestUned\ClassLibraryRestOrdering\bin\Release\ClassLibraryRestOrdering.dll
+C:\Users\serra\Desktop\c#\RESTUNEDAPP\ClassLibraryRestUned\ClassLibraryRestOrdering\bin\Release\ClassLibraryRestOrdering.pdb
+C:\Users\serra\Desktop\c#\RESTUNEDAPP\ClassLibraryRestUned\ClassLibraryRestOrdering\obj\Release\ClassLibraryRestOrdering.dll
+C:\Users\serra\Desktop\c#\RESTUNEDAPP\ClassLibraryRestUned\ClassLibraryRestOrdering\obj\Release\ClassLibraryRestOrdering.pdb
