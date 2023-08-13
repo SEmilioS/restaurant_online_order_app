@@ -124,7 +124,16 @@
     <value>Log</value>
   </data>
   <data name="Columna_Categoria" xml:space="preserve">
-    <value>Dish Category</value>
+    <value>Dish Category ID</value>
+  </data>
+  <data name="Columna_Descripcion" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Columna_Estado" xml:space="preserve">
+    <value>Availability</value>
+  </data>
+  <data name="Columna_ExtraID" xml:space="preserve">
+    <value>Extra ID</value>
   </data>
   <data name="Columna_IDPlato" xml:space="preserve">
     <value>Dish ID</value>
@@ -135,8 +144,59 @@
   <data name="Columna_Precio" xml:space="preserve">
     <value>Price</value>
   </data>
+  <data name="Columna_RestDireccion" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Columna_RestID" xml:space="preserve">
+    <value>Restaurant ID</value>
+  </data>
+  <data name="Columna_RestNombre" xml:space="preserve">
+    <value>Restaurant name</value>
+  </data>
   <data name="Columna_Seleccionar" xml:space="preserve">
     <value>Select</value>
+  </data>
+  <data name="Columna_Telefono" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="conCatPlato_info" xml:space="preserve">
+    <value>Below are all registered dish categories:</value>
+  </data>
+  <data name="conCatPlato_titulo" xml:space="preserve">
+    <value>Registered Dish categories</value>
+  </data>
+  <data name="conCliente_info" xml:space="preserve">
+    <value>Below are all registered clients:</value>
+  </data>
+  <data name="conCliente_titulo" xml:space="preserve">
+    <value>Registered Clients</value>
+  </data>
+  <data name="conExtras_info" xml:space="preserve">
+    <value>Below are all registered extras:</value>
+  </data>
+  <data name="conExtras_titulo" xml:space="preserve">
+    <value>Register Extras</value>
+  </data>
+  <data name="conPlatoRest_info" xml:space="preserve">
+    <value>Below are all registered associations of dishes per restaurant:</value>
+  </data>
+  <data name="conPlatoRest_RestInfo" xml:space="preserve">
+    <value>Restaurant information:</value>
+  </data>
+  <data name="conPlatoRest_titulo" xml:space="preserve">
+    <value>Associated Dishes</value>
+  </data>
+  <data name="conPlato_info" xml:space="preserve">
+    <value>Below are all registered dishes:</value>
+  </data>
+  <data name="conPlato_titulo" xml:space="preserve">
+    <value>Registered Dishes</value>
+  </data>
+  <data name="conRest_info" xml:space="preserve">
+    <value>Below are all registered restaurants:</value>
+  </data>
+  <data name="conRest_titulo" xml:space="preserve">
+    <value>Registered Restaurants</value>
   </data>
   <data name="D_buttonBitacora" xml:space="preserve">
     <value>Log</value>
@@ -217,25 +277,25 @@
     <value>Dish Category Registration Form</value>
   </data>
   <data name="regCliente_apellido1" xml:space="preserve">
-    <value>Client first last name:</value>
+    <value>First last name:</value>
   </data>
   <data name="regCliente_apellido2" xml:space="preserve">
-    <value>Client second last name:</value>
+    <value>Second last name:</value>
   </data>
   <data name="regCliente_genero" xml:space="preserve">
-    <value>Client gender:</value>
+    <value>Gender:</value>
   </data>
   <data name="regCliente_id" xml:space="preserve">
-    <value>Client identification:</value>
+    <value>Client Identification:</value>
   </data>
   <data name="regCliente_instrucciones" xml:space="preserve">
     <value>Fill out all the sections to register a client.</value>
   </data>
   <data name="regCliente_nacimiento" xml:space="preserve">
-    <value>Client Date of Birth:</value>
+    <value>Date of Birth:</value>
   </data>
   <data name="regCliente_nombre" xml:space="preserve">
-    <value>Client name:</value>
+    <value>Name:</value>
   </data>
   <data name="regCliente_titulo" xml:space="preserve">
     <value>Client Registration Form</value>

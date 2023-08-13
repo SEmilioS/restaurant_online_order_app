@@ -2,18 +2,40 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Resources;
+using System.Configuration;
 
 namespace RestOrderingApp.Formularios.Consulta
 {
     public partial class ConPlato : Form
     {
         private Plato[] platos;
+        private ResourceManager manager = new ResourceManager(typeof(Program));
         public ConPlato()
         {
             InitializeComponent();
+            SetLanguage();
             CargarArrays();
             if (platos != null)
             { llenartabla(); }
+        }
+
+        private void SetLanguage()
+        {
+            string selectedLanguage = ConfigurationManager.AppSettings["Language"]; // Get language setting from configuration
+
+            if (selectedLanguage == "es")
+            {
+                manager = new ResourceManager($"RestOrderingApp.esCR",
+                                                        typeof(Program).Assembly);
+            }
+            else if (selectedLanguage == "eng")
+            {
+                manager = new ResourceManager($"RestOrderingApp.engUS",
+                                            typeof(Program).Assembly);
+            }
+            label1.Text = manager.GetString("conPlato_titulo");
+            label2.Text = manager.GetString("conPlato_info");
         }
 
         /// <summary>
@@ -39,10 +61,10 @@ namespace RestOrderingApp.Formularios.Consulta
             dataGridView2.DefaultCellStyle.Font = new Font("Arial", 12);
             dataGridView2.DefaultCellStyle.ForeColor = Color.Black;
             dataGridView2.ColumnCount = 4;
-            dataGridView2.Columns[0].Name = "Id del plato";
-            dataGridView2.Columns[1].Name = "Nombre del plato";
-            dataGridView2.Columns[2].Name = "Precio";
-            dataGridView2.Columns[3].Name = "Id de Categoría";
+            dataGridView2.Columns[0].Name = manager.GetString("Columna_IDPlato");
+            dataGridView2.Columns[1].Name = manager.GetString("Columna_NombrePlato");
+            dataGridView2.Columns[2].Name = manager.GetString("Columna_Precio");
+            dataGridView2.Columns[3].Name = manager.GetString("Columna_Categoria");
 
             foreach (Plato rest in platos) //crea una fila por cada plato registrado
             {

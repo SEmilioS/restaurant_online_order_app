@@ -2,6 +2,8 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Resources;
+using System.Configuration;
 
 namespace RestOrderingApp.Formularios.Consulta
 {
@@ -10,12 +12,34 @@ namespace RestOrderingApp.Formularios.Consulta
         private Plato[] platos;
         private PlatoRestaurante[] platosRestaurante;
         private Restaurante[] restaurantes;
+        private ResourceManager manager = new ResourceManager(typeof(Program));
         public ConPlatoRest()
         {
             InitializeComponent();
+            SetLanguage();
             CargarArrays();
             if (restaurantes != null)
             { llenarcomboboxRest(); }
+        }
+        private void SetLanguage()
+        {
+            string selectedLanguage = ConfigurationManager.AppSettings["Language"]; // Get language setting from configuration
+
+            if (selectedLanguage == "es")
+            {
+                manager = new ResourceManager($"RestOrderingApp.esCR",
+                                                        typeof(Program).Assembly);
+            }
+            else if (selectedLanguage == "eng")
+            {
+                manager = new ResourceManager($"RestOrderingApp.engUS",
+                                            typeof(Program).Assembly);
+            }
+            label1.Text = manager.GetString("conPlatoRest_titulo");
+            label2.Text = manager.GetString("conPlatoRest_info");
+            label7.Text = manager.GetString("regPlatoRest_restaurante");
+            label3.Text = manager.GetString("conPlatoRest_RestInfo");
+            label4.Text = manager.GetString("regPlatoRest_platosAso");
         }
 
         /// <summary>
@@ -101,9 +125,9 @@ namespace RestOrderingApp.Formularios.Consulta
             dataGridView2.DefaultCellStyle.Font = new Font("Arial", 12);
             dataGridView2.DefaultCellStyle.ForeColor = Color.Black;
             dataGridView2.ColumnCount = 3;
-            dataGridView2.Columns[0].Name = "Id de Restaurante";
-            dataGridView2.Columns[1].Name = "Nombre";
-            dataGridView2.Columns[2].Name = "Dirección";
+            dataGridView2.Columns[0].Name = manager.GetString("Columna_RestID");
+            dataGridView2.Columns[1].Name = manager.GetString("Columna_RestNombre");
+            dataGridView2.Columns[2].Name = manager.GetString("Columna_RestDireccion"); ;
 
             foreach (Restaurante rest in restaurantes)
             {
@@ -124,10 +148,10 @@ namespace RestOrderingApp.Formularios.Consulta
             dataGridView1.DefaultCellStyle.Font = new Font("Arial", 12);
             dataGridView1.DefaultCellStyle.ForeColor = Color.Black;
             dataGridView1.ColumnCount = 4;
-            dataGridView1.Columns[0].Name = "Id del plato";
-            dataGridView1.Columns[1].Name = "Nombre del plato";
-            dataGridView1.Columns[2].Name = "Precio";
-            dataGridView1.Columns[3].Name = "Id de Categoría";
+            dataGridView1.Columns[0].Name = manager.GetString("Columna_IDPlato");
+            dataGridView1.Columns[1].Name = manager.GetString("Columna_NombrePlato");
+            dataGridView1.Columns[2].Name = manager.GetString("Columna_Precio");
+            dataGridView1.Columns[3].Name = manager.GetString("Columna_Categoria");
 
             Restaurante selectedRestaurante = restseleccionado();
 

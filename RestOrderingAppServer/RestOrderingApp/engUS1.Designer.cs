@@ -79,11 +79,38 @@ namespace RestOrderingApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Dish Category.
+        ///   Looks up a localized string similar to Dish Category ID.
         /// </summary>
         internal static string Columna_Categoria {
             get {
                 return ResourceManager.GetString("Columna_Categoria", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        internal static string Columna_Descripcion {
+            get {
+                return ResourceManager.GetString("Columna_Descripcion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Availability.
+        /// </summary>
+        internal static string Columna_Estado {
+            get {
+                return ResourceManager.GetString("Columna_Estado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extra ID.
+        /// </summary>
+        internal static string Columna_ExtraID {
+            get {
+                return ResourceManager.GetString("Columna_ExtraID", resourceCulture);
             }
         }
         
@@ -115,11 +142,164 @@ namespace RestOrderingApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        internal static string Columna_RestDireccion {
+            get {
+                return ResourceManager.GetString("Columna_RestDireccion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restaurant ID.
+        /// </summary>
+        internal static string Columna_RestID {
+            get {
+                return ResourceManager.GetString("Columna_RestID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restaurant name.
+        /// </summary>
+        internal static string Columna_RestNombre {
+            get {
+                return ResourceManager.GetString("Columna_RestNombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select.
         /// </summary>
         internal static string Columna_Seleccionar {
             get {
                 return ResourceManager.GetString("Columna_Seleccionar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone number.
+        /// </summary>
+        internal static string Columna_Telefono {
+            get {
+                return ResourceManager.GetString("Columna_Telefono", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Below are all registered dish categories:.
+        /// </summary>
+        internal static string conCatPlato_info {
+            get {
+                return ResourceManager.GetString("conCatPlato_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registered Dish categories.
+        /// </summary>
+        internal static string conCatPlato_titulo {
+            get {
+                return ResourceManager.GetString("conCatPlato_titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Below are all registered clients:.
+        /// </summary>
+        internal static string conCliente_info {
+            get {
+                return ResourceManager.GetString("conCliente_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registered Clients.
+        /// </summary>
+        internal static string conCliente_titulo {
+            get {
+                return ResourceManager.GetString("conCliente_titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Below are all registered extras:.
+        /// </summary>
+        internal static string conExtras_info {
+            get {
+                return ResourceManager.GetString("conExtras_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register Extras.
+        /// </summary>
+        internal static string conExtras_titulo {
+            get {
+                return ResourceManager.GetString("conExtras_titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Below are all registered dishes:.
+        /// </summary>
+        internal static string conPlato_info {
+            get {
+                return ResourceManager.GetString("conPlato_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registered Dishes.
+        /// </summary>
+        internal static string conPlato_titulo {
+            get {
+                return ResourceManager.GetString("conPlato_titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Below are all registered associations of dishes per restaurant:.
+        /// </summary>
+        internal static string conPlatoRest_info {
+            get {
+                return ResourceManager.GetString("conPlatoRest_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restaurant information:.
+        /// </summary>
+        internal static string conPlatoRest_RestInfo {
+            get {
+                return ResourceManager.GetString("conPlatoRest_RestInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Associated Dishes.
+        /// </summary>
+        internal static string conPlatoRest_titulo {
+            get {
+                return ResourceManager.GetString("conPlatoRest_titulo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Below are all registered restaurants:.
+        /// </summary>
+        internal static string conRest_info {
+            get {
+                return ResourceManager.GetString("conRest_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registered Restaurants.
+        /// </summary>
+        internal static string conRest_titulo {
+            get {
+                return ResourceManager.GetString("conRest_titulo", resourceCulture);
             }
         }
         
@@ -421,7 +601,7 @@ namespace RestOrderingApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Client first last name:.
+        ///   Looks up a localized string similar to First last name:.
         /// </summary>
         internal static string regCliente_apellido1 {
             get {
@@ -430,7 +610,7 @@ namespace RestOrderingApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Client second last name:.
+        ///   Looks up a localized string similar to Second last name:.
         /// </summary>
         internal static string regCliente_apellido2 {
             get {
@@ -439,7 +619,7 @@ namespace RestOrderingApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Client gender:.
+        ///   Looks up a localized string similar to Gender:.
         /// </summary>
         internal static string regCliente_genero {
             get {
@@ -448,7 +628,7 @@ namespace RestOrderingApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Client identification:.
+        ///   Looks up a localized string similar to Client Identification:.
         /// </summary>
         internal static string regCliente_id {
             get {
@@ -466,7 +646,7 @@ namespace RestOrderingApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Client Date of Birth:.
+        ///   Looks up a localized string similar to Date of Birth:.
         /// </summary>
         internal static string regCliente_nacimiento {
             get {
@@ -475,7 +655,7 @@ namespace RestOrderingApp {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Client name:.
+        ///   Looks up a localized string similar to Name:.
         /// </summary>
         internal static string regCliente_nombre {
             get {

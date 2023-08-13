@@ -2,18 +2,39 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Resources;
+using System.Configuration;
 
 namespace RestOrderingApp.Formularios.Consulta
 {
     public partial class ConCliente : Form
     {
         private Cliente[] clientes;
+        private ResourceManager manager = new ResourceManager(typeof(Program));
         public ConCliente()
         {
             InitializeComponent();
+            SetLanguage();
             CargarArrays();
             if (clientes != null)
             { llenartabla(); }
+        }
+        private void SetLanguage()
+        {
+            string selectedLanguage = ConfigurationManager.AppSettings["Language"]; // Get language setting from configuration
+
+            if (selectedLanguage == "es")
+            {
+                manager = new ResourceManager($"RestOrderingApp.esCR",
+                                                        typeof(Program).Assembly);
+            }
+            else if (selectedLanguage == "eng")
+            {
+                manager = new ResourceManager($"RestOrderingApp.engUS",
+                                            typeof(Program).Assembly);
+            }
+            label1.Text = manager.GetString("conCliente_titulo");
+            label2.Text = manager.GetString("conCliente_info");
         }
 
         /// <summary>
@@ -39,12 +60,12 @@ namespace RestOrderingApp.Formularios.Consulta
             dataGridView2.DefaultCellStyle.Font = new Font("Arial", 12);
             dataGridView2.DefaultCellStyle.ForeColor = Color.Black;
             dataGridView2.ColumnCount = 6;
-            dataGridView2.Columns[0].Name = "Identificación";
-            dataGridView2.Columns[1].Name = "Nombre";
-            dataGridView2.Columns[2].Name = "Primer Apellido";
-            dataGridView2.Columns[3].Name = "Segundo Apellido";
-            dataGridView2.Columns[4].Name = "Fecha de nacimiento";
-            dataGridView2.Columns[5].Name = "Genero";
+            dataGridView2.Columns[0].Name = manager.GetString("regCliente_id");
+            dataGridView2.Columns[1].Name = manager.GetString("regCliente_nombre");
+            dataGridView2.Columns[2].Name = manager.GetString("regCliente_apellido1");
+            dataGridView2.Columns[3].Name = manager.GetString("regCliente_apellido2");
+            dataGridView2.Columns[4].Name = manager.GetString("regCliente_nacimiento");
+            dataGridView2.Columns[5].Name = manager.GetString("regCliente_genero");
 
             foreach (Cliente rest in clientes) //Crea una fila por cada cliente
             {

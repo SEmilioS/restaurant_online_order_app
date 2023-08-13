@@ -124,7 +124,16 @@
     <value>Bitácora</value>
   </data>
   <data name="Columna_Categoria" xml:space="preserve">
-    <value>Categoría</value>
+    <value>Id de Categoría</value>
+  </data>
+  <data name="Columna_Descripcion" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="Columna_Estado" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="Columna_ExtraID" xml:space="preserve">
+    <value>Id del extra</value>
   </data>
   <data name="Columna_IDPlato" xml:space="preserve">
     <value>Id del plato</value>
@@ -135,8 +144,59 @@
   <data name="Columna_Precio" xml:space="preserve">
     <value>Precio</value>
   </data>
+  <data name="Columna_RestDireccion" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="Columna_RestID" xml:space="preserve">
+    <value>Id del restaurante</value>
+  </data>
+  <data name="Columna_RestNombre" xml:space="preserve">
+    <value>Nombre del restaurante</value>
+  </data>
   <data name="Columna_Seleccionar" xml:space="preserve">
     <value>Seleccionar</value>
+  </data>
+  <data name="Columna_Telefono" xml:space="preserve">
+    <value>Teléfono</value>
+  </data>
+  <data name="conCatPlato_info" xml:space="preserve">
+    <value>A continuación se muestran todas las categorias registradas:</value>
+  </data>
+  <data name="conCatPlato_titulo" xml:space="preserve">
+    <value>Categorías de plato registradas</value>
+  </data>
+  <data name="conCliente_info" xml:space="preserve">
+    <value>A continuación se muestran todas los clientes registrados:</value>
+  </data>
+  <data name="conCliente_titulo" xml:space="preserve">
+    <value>Clientes registrados</value>
+  </data>
+  <data name="conExtras_info" xml:space="preserve">
+    <value>A continuación se muestran todas las extras registradas:</value>
+  </data>
+  <data name="conExtras_titulo" xml:space="preserve">
+    <value>Extras registradas</value>
+  </data>
+  <data name="conPlatoRest_info" xml:space="preserve">
+    <value>A continuación se muestrans todos los platos asociados por restaurante:</value>
+  </data>
+  <data name="conPlatoRest_RestInfo" xml:space="preserve">
+    <value>Información del restaurante:</value>
+  </data>
+  <data name="conPlatoRest_titulo" xml:space="preserve">
+    <value>Platos Asociados</value>
+  </data>
+  <data name="conPlato_info" xml:space="preserve">
+    <value>A continuación se muestran todos los restaurantes registrados:</value>
+  </data>
+  <data name="conPlato_titulo" xml:space="preserve">
+    <value>Platos registrados</value>
+  </data>
+  <data name="conRest_info" xml:space="preserve">
+    <value>A continuación se muestran todos los restaurantes registrados:</value>
+  </data>
+  <data name="conRest_titulo" xml:space="preserve">
+    <value>Restaurantes registrados</value>
   </data>
   <data name="D_buttonBitacora" xml:space="preserve">
     <value>Bitácora</value>
@@ -217,13 +277,13 @@
     <value>Registro de Categoría de Plato</value>
   </data>
   <data name="regCliente_apellido1" xml:space="preserve">
-    <value>Primer Apellido del Cliente:</value>
+    <value>Primer Apellido:</value>
   </data>
   <data name="regCliente_apellido2" xml:space="preserve">
-    <value>Segundo Apellido del Cliente:</value>
+    <value>Segundo Apellido:</value>
   </data>
   <data name="regCliente_genero" xml:space="preserve">
-    <value>Genero del cliente:</value>
+    <value>Genero:</value>
   </data>
   <data name="regCliente_id" xml:space="preserve">
     <value>Identificación del Cliente:</value>
@@ -235,7 +295,7 @@
     <value>Fecha de nacimineto:</value>
   </data>
   <data name="regCliente_nombre" xml:space="preserve">
-    <value>Nombre del cliente:</value>
+    <value>Nombre:</value>
   </data>
   <data name="regCliente_titulo" xml:space="preserve">
     <value>Registro de Cliente</value>
