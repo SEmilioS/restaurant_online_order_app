@@ -1,6 +1,8 @@
 ﻿using RestOrderingClases;
 using System;
+using System.Configuration;
 using System.Linq;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace RestOrderingApp.Formularios.Registro
@@ -9,9 +11,11 @@ namespace RestOrderingApp.Formularios.Registro
     {
         int[] platoIDs;
         CategoriaPlato[] categorias;
+        private ResourceManager manager = new ResourceManager(typeof(Program));
         public RegPlato()
         {
             InitializeComponent();
+            SetLanguage();
             panelErrorID.Visible = false;
             panelErrorCat.Visible = false;
             panelErrorPrecio.Visible = false;
@@ -25,9 +29,32 @@ namespace RestOrderingApp.Formularios.Registro
                 panelErrorCat.Visible = false;
                 panelErrorPrecio.Visible = false;
                 panelErrorReg.Visible = true;
-                labelFaltaInfo.Visible = false;
-                label10.Visible = true;
+                labelErrorBtn.Text = manager.GetString("regPlato_ErrorCat");
             }
+        }
+
+        private void SetLanguage()
+        {
+            string selectedLanguage = ConfigurationManager.AppSettings["Language"]; // Get language setting from configuration
+
+            if (selectedLanguage == "es")
+            {
+                manager = new ResourceManager($"RestOrderingApp.esCR",
+                                                        typeof(Program).Assembly);
+            }
+            else if (selectedLanguage == "eng")
+            {
+                manager = new ResourceManager($"RestOrderingApp.engUS",
+                                            typeof(Program).Assembly);
+            }
+
+            label1.Text = manager.GetString("regPlato_titulo");
+            label2.Text = manager.GetString("regPlato_instrucciones");
+            label3.Text = manager.GetString("regPlato_id");
+            label4.Text = manager.GetString("regPlato_nombre");
+            label6.Text = manager.GetString("regPlato_precio");
+            label7.Text = manager.GetString("regPlato_idCat");
+            buttonReg.Text = manager.GetString("reg_boton");
         }
 
         /// <summary>
@@ -38,7 +65,7 @@ namespace RestOrderingApp.Formularios.Registro
             textBoxID.Enabled = false;
             buttonReg.Enabled = false;
             panelErrorID.Visible = true;
-            labelcargando.Visible = true;
+            labelError.Text = manager.GetString("Reg_Cargando");
             platoIDs = Program.datosSQL.ObtenerIDs("Plato");
             categorias = Program.datosSQL.ObtenerCategorias();
             if (categorias == null || platoIDs == null)
@@ -46,12 +73,10 @@ namespace RestOrderingApp.Formularios.Registro
                 MessageBox.Show("Hubo un error al obtener informacion de la base de datos.", "Error de información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Program.bitacora.Registros.Add($"{DateTime.Now} Sistema: Error al obtener IDs de categoria o platos en Form RegPlato");
                 Program.bitacora.Nuevolog = true;
-                labelcargando.Visible = false;
-                labelErrorDB.Visible = true;
+                labelError.Text = manager.GetString("Reg_ErrorDataBase");
                 return;
             }
             panelErrorID.Visible = false;
-            labelcargando.Visible = false;
             textBoxID.Enabled = true;
             buttonReg.Enabled = true;
         }
@@ -64,15 +89,13 @@ namespace RestOrderingApp.Formularios.Registro
         private void IdEsValida(object sender, EventArgs e)
         {
             panelErrorID.Visible = false;
-            labelidnounica.Visible = false;
-            labelnointid.Visible = false;
             int id;
 
             if (!int.TryParse(textBoxID.Text, out id))
             {
                 buttonReg.Enabled = false;
                 panelErrorID.Visible = true;
-                labelnointid.Visible = true;
+                labelError.Text = manager.GetString("Reg_ErrorNoInt");
             }
             else
             {
@@ -82,7 +105,7 @@ namespace RestOrderingApp.Formularios.Registro
                 {
                     buttonReg.Enabled = false;
                     panelErrorID.Visible = true;
-                    labelidnounica.Visible = true;
+                    labelError.Text = manager.GetString("Reg_IdYaExiste");
                 }
                 else { buttonReg.Enabled = true; }
             }
@@ -123,15 +146,13 @@ namespace RestOrderingApp.Formularios.Registro
         private void catvalida(object sender, EventArgs e)
         {
             panelErrorCat.Visible = false;
-            label9.Visible = false;
-            label5.Visible = false;
             int id;
 
             if (!int.TryParse(textBoxCategoriaID.Text, out id))
             {
                 buttonReg.Enabled = false;
                 panelErrorCat.Visible = true;
-                label9.Visible = true;
+                labelErrorCat.Text = manager.GetString("Reg_ErrorNoInt");
             }
             else
             {
@@ -141,7 +162,7 @@ namespace RestOrderingApp.Formularios.Registro
                 {
                     buttonReg.Enabled = false;
                     panelErrorCat.Visible = true;
-                    label5.Visible = true;
+                    labelErrorCat.Text = manager.GetString("Reg_IdNoExiste");
                 }
                 else { buttonReg.Enabled = true; }
             }
@@ -196,8 +217,7 @@ namespace RestOrderingApp.Formularios.Registro
             else //muestra error si los datos no estan completos
             {
                 panelErrorReg.Visible = true;
-                labelFaltaInfo.Visible = true;
-                label10.Visible = false;
+                labelErrorBtn.Text = manager.GetString("Reg_ErrorFaltaInfo");
 
             }
         }
@@ -211,12 +231,11 @@ namespace RestOrderingApp.Formularios.Registro
         private void esintprecio(object sender, EventArgs e)
         {
             panelErrorPrecio.Visible = false;
-            label8.Visible = false;
 
             if (!int.TryParse(textBoxPrecio.Text, out _))
             {
                 panelErrorPrecio.Visible = true;
-                label8.Visible = true;
+                labelErrorPrecio.Text = manager.GetString("Reg_ErrorNoInt");
             }
         }
     }

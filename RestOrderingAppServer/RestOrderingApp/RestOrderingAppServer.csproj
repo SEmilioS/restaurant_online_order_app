@@ -142,6 +142,11 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="engUS1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>engUS.resx</DependentUpon>
+    </Compile>
     <Compile Include="EscritorBaseDatos.cs" />
     <Compile Include="LectorBaseDatos.cs" />
     <Compile Include="LogBitacora.cs" />
@@ -190,6 +195,11 @@
       <DependentUpon>RegRestaurante.cs</DependentUpon>
     </Compile>
     <Compile Include="Servidor.cs" />
+    <Compile Include="esCR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>esCR.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Bitacora.resx">
       <DependentUpon>Bitacora.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +224,10 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="engUS.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>engUS1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -236,6 +250,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegRestaurante.resx">
       <DependentUpon>RegRestaurante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="esCR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>esCR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Bitacora_instrucciones" xml:space="preserve">
+    <value>Below are all logged events:</value>
+  </data>
+  <data name="Bitacora_titulo" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="Columna_Categoria" xml:space="preserve">
+    <value>Dish Category</value>
+  </data>
+  <data name="Columna_IDPlato" xml:space="preserve">
+    <value>Dish ID</value>
+  </data>
+  <data name="Columna_NombrePlato" xml:space="preserve">
+    <value>Dish Name</value>
+  </data>
+  <data name="Columna_Precio" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="Columna_Seleccionar" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="D_buttonBitacora" xml:space="preserve">
+    <value>Log</value>
+  </data>
+  <data name="D_conCatPlato" xml:space="preserve">
+    <value>Dish Categories</value>
+  </data>
+  <data name="D_conCliente" xml:space="preserve">
+    <value>Clients</value>
+  </data>
+  <data name="D_conExtras" xml:space="preserve">
+    <value>Extras</value>
+  </data>
+  <data name="D_conPlato" xml:space="preserve">
+    <value>Dishes</value>
+  </data>
+  <data name="D_conPlatoRest" xml:space="preserve">
+    <value>Dishes per Restaurant</value>
+  </data>
+  <data name="D_conRestaurante" xml:space="preserve">
+    <value>Restaurants</value>
+  </data>
+  <data name="D_ConsultarBtn" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="D_regCatPlato" xml:space="preserve">
+    <value>Dish Category</value>
+  </data>
+  <data name="D_regCliente" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="D_regExtra" xml:space="preserve">
+    <value>Extra</value>
+  </data>
+  <data name="D_RegistrarBtn" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="D_regPlato" xml:space="preserve">
+    <value>Dish</value>
+  </data>
+  <data name="D_regPlatoRest" xml:space="preserve">
+    <value>Dishes per Restaurant</value>
+  </data>
+  <data name="D_regRestaurante" xml:space="preserve">
+    <value>Restaurant</value>
+  </data>
+  <data name="D_UsuCuenta" xml:space="preserve">
+    <value>Connected Users:</value>
+  </data>
+  <data name="Estado1" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="Estado2" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="Genero1" xml:space="preserve">
+    <value>F: Feminine</value>
+  </data>
+  <data name="Genero2" xml:space="preserve">
+    <value>M: Masculine</value>
+  </data>
+  <data name="Genero3" xml:space="preserve">
+    <value>O: other</value>
+  </data>
+  <data name="regCat_descripcion" xml:space="preserve">
+    <value>Category Description:</value>
+  </data>
+  <data name="regCat_estado" xml:space="preserve">
+    <value>Category availability:</value>
+  </data>
+  <data name="regCat_id" xml:space="preserve">
+    <value>Category identification:</value>
+  </data>
+  <data name="regCat_instrucciones" xml:space="preserve">
+    <value>Fill out all the sections to register a category.</value>
+  </data>
+  <data name="regCat_titulo" xml:space="preserve">
+    <value>Dish Category Registration Form</value>
+  </data>
+  <data name="regCliente_apellido1" xml:space="preserve">
+    <value>Client first last name:</value>
+  </data>
+  <data name="regCliente_apellido2" xml:space="preserve">
+    <value>Client second last name:</value>
+  </data>
+  <data name="regCliente_genero" xml:space="preserve">
+    <value>Client gender:</value>
+  </data>
+  <data name="regCliente_id" xml:space="preserve">
+    <value>Client identification:</value>
+  </data>
+  <data name="regCliente_instrucciones" xml:space="preserve">
+    <value>Fill out all the sections to register a client.</value>
+  </data>
+  <data name="regCliente_nacimiento" xml:space="preserve">
+    <value>Client Date of Birth:</value>
+  </data>
+  <data name="regCliente_nombre" xml:space="preserve">
+    <value>Client name:</value>
+  </data>
+  <data name="regCliente_titulo" xml:space="preserve">
+    <value>Client Registration Form</value>
+  </data>
+  <data name="regExtra_descripcion" xml:space="preserve">
+    <value>Extra description:</value>
+  </data>
+  <data name="regExtra_estado" xml:space="preserve">
+    <value>Extra availability:</value>
+  </data>
+  <data name="regExtra_id" xml:space="preserve">
+    <value>Extra identification:</value>
+  </data>
+  <data name="regExtra_idCat" xml:space="preserve">
+    <value>Dish Category ID:</value>
+  </data>
+  <data name="regExtra_instrucciones" xml:space="preserve">
+    <value>Fill out all the sections to register an extra.</value>
+  </data>
+  <data name="regExtra_precio" xml:space="preserve">
+    <value>Extra price:</value>
+  </data>
+  <data name="regExtra_titulo" xml:space="preserve">
+    <value>Extra Registration Form</value>
+  </data>
+  <data name="regPlatoRest_asociar" xml:space="preserve">
+    <value>Associate</value>
+  </data>
+  <data name="regPlatoRest_ErrorNoPlat" xml:space="preserve">
+    <value>You must register a dish first!</value>
+  </data>
+  <data name="regPlatoRest_ErrorNoRest" xml:space="preserve">
+    <value>You must register a restaurant first!</value>
+  </data>
+  <data name="regPlatoRest_ErrorRest" xml:space="preserve">
+    <value>You must select a restaurant first!</value>
+  </data>
+  <data name="regPlatoRest_instrucciones" xml:space="preserve">
+    <value>Select a restaurant and the dishes to be associated.</value>
+  </data>
+  <data name="regPlatoRest_M1_info" xml:space="preserve">
+    <value>You must select at least one dish.</value>
+  </data>
+  <data name="regPlatoRest_M1_tipo" xml:space="preserve">
+    <value>Required Selecction</value>
+  </data>
+  <data name="regPlatoRest_M2_info" xml:space="preserve">
+    <value>Only 10 dishes can be associated per registration.</value>
+  </data>
+  <data name="regPlatoRest_M2_tipo" xml:space="preserve">
+    <value>Selection limit exceeded</value>
+  </data>
+  <data name="regPlatoRest_M3_info1" xml:space="preserve">
+    <value>You have selected</value>
+  </data>
+  <data name="regPlatoRest_M3_info2" xml:space="preserve">
+    <value>dishes. Want to add more? The maximum is 10.</value>
+  </data>
+  <data name="regPlatoRest_M3_tipo" xml:space="preserve">
+    <value>Additional selection</value>
+  </data>
+  <data name="regPlatoRest_M4_info" xml:space="preserve">
+    <value>You have selected 10 dishes. 10 is the maximun. Do you want to register the association? Select No to change your selection of dishes.</value>
+  </data>
+  <data name="regPlatoRest_M4_tipo" xml:space="preserve">
+    <value>Selección con límite máximo</value>
+  </data>
+  <data name="regPlatoRest_M5_info" xml:space="preserve">
+    <value>Dishes associated correctly!</value>
+  </data>
+  <data name="regPlatoRest_M5_tipo" xml:space="preserve">
+    <value>Successful association</value>
+  </data>
+  <data name="regPlatoRest_platos" xml:space="preserve">
+    <value>Available dishes:</value>
+  </data>
+  <data name="regPlatoRest_platosAso" xml:space="preserve">
+    <value>Associated dishes:</value>
+  </data>
+  <data name="regPlatoRest_restaurante" xml:space="preserve">
+    <value>Available restaurants:</value>
+  </data>
+  <data name="regPlatoRest_titulo" xml:space="preserve">
+    <value>Dish per Restaurant Registration Form</value>
+  </data>
+  <data name="regPlato_ErrorCat" xml:space="preserve">
+    <value>You must register a dish category first!</value>
+  </data>
+  <data name="regPlato_id" xml:space="preserve">
+    <value>Dish identification:</value>
+  </data>
+  <data name="regPlato_idCat" xml:space="preserve">
+    <value>Dish Category ID:</value>
+  </data>
+  <data name="regPlato_instrucciones" xml:space="preserve">
+    <value>Fill out all the sections to register a dish.</value>
+  </data>
+  <data name="regPlato_nombre" xml:space="preserve">
+    <value>Dish name:</value>
+  </data>
+  <data name="regPlato_precio" xml:space="preserve">
+    <value>Dish price:</value>
+  </data>
+  <data name="regPlato_titulo" xml:space="preserve">
+    <value>Dish Registration Form</value>
+  </data>
+  <data name="regRest_direccion" xml:space="preserve">
+    <value>Restaurant address:</value>
+  </data>
+  <data name="regRest_estado" xml:space="preserve">
+    <value>Restaurant availability:</value>
+  </data>
+  <data name="regRest_id" xml:space="preserve">
+    <value>Restaurant identification:</value>
+  </data>
+  <data name="regRest_instrucciones" xml:space="preserve">
+    <value>Fill out all the sections to register a restaurant.</value>
+  </data>
+  <data name="regRest_nombre" xml:space="preserve">
+    <value>Restaurant name:</value>
+  </data>
+  <data name="regRest_telefono" xml:space="preserve">
+    <value>Restaurant phone number:</value>
+  </data>
+  <data name="regRest_titulo" xml:space="preserve">
+    <value>Restaurant Registration Form</value>
+  </data>
+  <data name="reg_boton" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Reg_Cargando" xml:space="preserve">
+    <value>Loading resources</value>
+  </data>
+  <data name="Reg_ErrorDataBase" xml:space="preserve">
+    <value>Error on Data Base</value>
+  </data>
+  <data name="Reg_ErrorFaltaInfo" xml:space="preserve">
+    <value>You must fill out all the spaces with the correct format!</value>
+  </data>
+  <data name="Reg_ErrorNoInt" xml:space="preserve">
+    <value>It most be a positive number</value>
+  </data>
+  <data name="Reg_IdNoExiste" xml:space="preserve">
+    <value>The indicated ID does not exist!</value>
+  </data>
+  <data name="Reg_IdYaExiste" xml:space="preserve">
+    <value>The Id already exists!</value>
+  </data>
+</root>

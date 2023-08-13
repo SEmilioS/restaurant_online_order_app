@@ -4,18 +4,58 @@ using System.Windows.Forms;
 using RestOrderingApp.Formularios.Consulta;
 using RestOrderingApp.Formularios.Log;
 using RestOrderingApp.Formularios.Registro;
+using System.Resources;
+using System.Configuration;
 
 namespace RestOrderingApp.Formularios.MenuPrincipal
 {
     public partial class Dashboard : Form
     {
+        private string UsuCuentaText;
         public Dashboard()
         {
             InitializeComponent();
+            SetLanguage();
             diseñocustom();
             bitacora_click(null, EventArgs.Empty);
             usucuenta_click(null, EventArgs.Empty);
             IniciarCheckUsuariosThread();
+        }
+
+        private void SetLanguage()
+        {
+            ResourceManager _resourceManager = new ResourceManager(typeof(Program));
+
+            string selectedLanguage = ConfigurationManager.AppSettings["Language"]; // Get language setting from configuration
+
+            if (selectedLanguage == "es")
+            {
+                _resourceManager = new ResourceManager($"RestOrderingApp.esCR",
+                                                        typeof(Program).Assembly);
+            }
+            else if (selectedLanguage == "eng")
+            {
+                _resourceManager = new ResourceManager($"RestOrderingApp.engUS",
+                                            typeof(Program).Assembly);
+            }
+
+            buttonBitacora.Text = _resourceManager.GetString("D_buttonBitacora");
+            conExtras.Text = _resourceManager.GetString("D_conExtras");
+            conPlatoRest.Text = _resourceManager.GetString("D_conPlatoRest");
+            conCliente.Text = _resourceManager.GetString("D_conCliente");
+            conPlato.Text = _resourceManager.GetString("D_conPlato");
+            conCatPlato.Text = _resourceManager.GetString("D_conCatPlato");
+            conRestaurante.Text = _resourceManager.GetString("D_conRestaurante");
+            ConsultarBtn.Text = _resourceManager.GetString("D_ConsultarBtn");
+            regExtras.Text = _resourceManager.GetString("D_regExtra");
+            regPlatoRest.Text = _resourceManager.GetString("D_regPlatoRest");
+            regCliente.Text = _resourceManager.GetString("D_regCliente");
+            regPlato.Text = _resourceManager.GetString("D_regPlato");
+            regCatPlato.Text = _resourceManager.GetString("D_regCatPlato");
+            regRestaurante.Text = _resourceManager.GetString("D_regRestaurante");
+            RegistrarBtn.Text = _resourceManager.GetString("D_RegistrarBtn");
+            UsuCuenta.Text = _resourceManager.GetString("D_UsuCuenta");
+            UsuCuentaText = _resourceManager.GetString("D_UsuCuenta");
         }
 
         /// <summary>
@@ -32,12 +72,12 @@ namespace RestOrderingApp.Formularios.MenuPrincipal
                 {
                     this.Invoke((MethodInvoker)delegate
                     {
-                        this.UsuCuenta.Text = $"Usuarios conectados: {CuentaUsuarios}";
+                        this.UsuCuenta.Text = $"{UsuCuentaText} {CuentaUsuarios}";
                     });
                 }
                 else
                 {
-                    this.UsuCuenta.Text = $"Usuarios conectados: {CuentaUsuarios}";
+                    this.UsuCuenta.Text = $"{UsuCuentaText} {CuentaUsuarios}";
                 }
             }
         }
@@ -218,7 +258,7 @@ namespace RestOrderingApp.Formularios.MenuPrincipal
         private void usucuenta_click(object sender, EventArgs e)
         {
             int CuentaUsuarios = Program.usuariosautenticados;
-            UsuCuenta.Text = $"Usuarios conectados: {CuentaUsuarios}";
+            UsuCuenta.Text = $"{UsuCuentaText}  {CuentaUsuarios}";
         }
 
         /// <summary>

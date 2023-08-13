@@ -1,5 +1,7 @@
 ﻿using RestOrderingClases;
 using System;
+using System.Configuration;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace RestOrderingApp.Formularios.Registro
@@ -7,15 +9,39 @@ namespace RestOrderingApp.Formularios.Registro
     public partial class RegCatPlato : Form
     {
         int[] categoriaIDs;
+        private ResourceManager manager = new ResourceManager(typeof(Program));
         public RegCatPlato()
         {
             InitializeComponent();
+            SetLanguage();
             //esconder todos los paneles de error
             panelErrorID.Visible = false;
-            labelidnounica.Visible = false;
-            labelnointid.Visible = false;
             panelErrorReg.Visible = false;
             CargarIds();
+        }
+
+        private void SetLanguage()
+        {
+            string selectedLanguage = ConfigurationManager.AppSettings["Language"]; // Get language setting from configuration
+
+            if (selectedLanguage == "es")
+            {
+                manager = new ResourceManager($"RestOrderingApp.esCR",
+                                                        typeof(Program).Assembly);
+            }
+            else if (selectedLanguage == "eng")
+            {
+                manager = new ResourceManager($"RestOrderingApp.engUS",
+                                            typeof(Program).Assembly);
+            }
+
+            label1.Text = manager.GetString("regCat_titulo");
+            label2.Text = manager.GetString("regCat_instrucciones");
+            label3.Text = manager.GetString("regCat_id");
+            label5.Text = manager.GetString("regCat_descripcion");
+            label7.Text = manager.GetString("regCat_estado");
+            buttonReg.Text = manager.GetString("reg_boton");
+            comboBoxEstado.Items.AddRange(new object[] { manager.GetString("Estado1"), manager.GetString("Estado2") });
         }
 
         /// <summary>
@@ -26,19 +52,17 @@ namespace RestOrderingApp.Formularios.Registro
             textBoxID.Enabled = false;
             buttonReg.Enabled = false;
             panelErrorID.Visible = true;
-            labelcargando.Visible = true;
+            labelError.Text = manager.GetString("Reg_Cargando");
             categoriaIDs = Program.datosSQL.ObtenerIDs("Categoria_SinEstado");
             if (categoriaIDs == null)
             {
                 MessageBox.Show("Hubo un error al obtener informacion de la base de datos.", "Error de información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Program.bitacora.Registros.Add($"{DateTime.Now} Sistema: Error al obtener IDs de categoria en Form RegCatPlato");
                 Program.bitacora.Nuevolog = true;
-                labelcargando.Visible = false;
-                labelErrorDB.Visible = true;
+                labelError.Text = manager.GetString("Reg_ErrorDataBase");
                 return;
             }
             panelErrorID.Visible = false;
-            labelcargando.Visible = false;
             textBoxID.Enabled = true;
             buttonReg.Enabled = true;
         }
@@ -51,15 +75,13 @@ namespace RestOrderingApp.Formularios.Registro
         private void idesvalida(object sender, EventArgs e) 
         {
             panelErrorID.Visible = false;
-            labelidnounica.Visible = false;
-            labelnointid.Visible = false;
             int id;
 
             if (!int.TryParse(textBoxID.Text, out id)) //intenta convertir la string a int, si no funciona muestra error
             {
                 buttonReg.Enabled = false;
                 panelErrorID.Visible = true;
-                labelnointid.Visible = true;
+                labelError.Text = manager.GetString("Reg_ErrorNoInt");
             }
             else //si funciona, verifica si es unica
             {
@@ -69,7 +91,7 @@ namespace RestOrderingApp.Formularios.Registro
                 {
                     buttonReg.Enabled = false;
                     panelErrorID.Visible = true;
-                    labelidnounica.Visible = true;
+                    labelError.Text = manager.GetString("Reg_IdYaExiste");
                 }
                 else { buttonReg.Enabled = true; }
             }
@@ -124,6 +146,12 @@ namespace RestOrderingApp.Formularios.Registro
                     case "Inactivo":
                         estado = false;
                         break;
+                    case "Active":
+                        estado = true;
+                        break;
+                    case "Inactive":
+                        estado = false;
+                        break;
                     default:
                         estado = false;
                         break;
@@ -139,7 +167,10 @@ namespace RestOrderingApp.Formularios.Registro
                 CargarIds();
             }
             else //de lo contrario muestra un error
-            { panelErrorReg.Visible = true; }
+            { 
+                panelErrorReg.Visible = true;
+                labelErrorBtn.Text = manager.GetString("Reg_ErrorFaltaInfo");
+            }
         }
     }
 }

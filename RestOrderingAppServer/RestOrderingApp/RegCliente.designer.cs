@@ -36,11 +36,9 @@
             this.textBoxApellido2 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panelErrorReg = new System.Windows.Forms.Panel();
-            this.labelFaltaInfo = new System.Windows.Forms.Label();
+            this.labelErrorBtn = new System.Windows.Forms.Label();
             this.panelErrorID = new System.Windows.Forms.Panel();
-            this.labelErrorDB = new System.Windows.Forms.Label();
-            this.labelcargando = new System.Windows.Forms.Label();
-            this.labelidnounica = new System.Windows.Forms.Label();
+            this.labelError = new System.Windows.Forms.Label();
             this.buttonReg = new System.Windows.Forms.Button();
             this.comboBoxGenero = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -135,69 +133,43 @@
             // 
             // panelErrorReg
             // 
-            this.panelErrorReg.Controls.Add(this.labelFaltaInfo);
+            this.panelErrorReg.Controls.Add(this.labelErrorBtn);
             this.panelErrorReg.Location = new System.Drawing.Point(37, 345);
             this.panelErrorReg.Name = "panelErrorReg";
             this.panelErrorReg.Size = new System.Drawing.Size(425, 32);
             this.panelErrorReg.TabIndex = 37;
             // 
-            // labelFaltaInfo
+            // labelErrorBtn
             // 
-            this.labelFaltaInfo.AutoSize = true;
-            this.labelFaltaInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelFaltaInfo.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelFaltaInfo.ForeColor = System.Drawing.Color.Red;
-            this.labelFaltaInfo.Location = new System.Drawing.Point(0, 0);
-            this.labelFaltaInfo.Name = "labelFaltaInfo";
-            this.labelFaltaInfo.Size = new System.Drawing.Size(322, 14);
-            this.labelFaltaInfo.TabIndex = 0;
-            this.labelFaltaInfo.Text = "X Debe llenar todos los apartados con el formato correcto!";
+            this.labelErrorBtn.AutoSize = true;
+            this.labelErrorBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelErrorBtn.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelErrorBtn.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorBtn.Location = new System.Drawing.Point(0, 0);
+            this.labelErrorBtn.Name = "labelErrorBtn";
+            this.labelErrorBtn.Size = new System.Drawing.Size(33, 14);
+            this.labelErrorBtn.TabIndex = 0;
+            this.labelErrorBtn.Text = "error";
             // 
             // panelErrorID
             // 
-            this.panelErrorID.Controls.Add(this.labelErrorDB);
-            this.panelErrorID.Controls.Add(this.labelcargando);
-            this.panelErrorID.Controls.Add(this.labelidnounica);
+            this.panelErrorID.Controls.Add(this.labelError);
             this.panelErrorID.Location = new System.Drawing.Point(33, 79);
             this.panelErrorID.Name = "panelErrorID";
-            this.panelErrorID.Size = new System.Drawing.Size(214, 48);
+            this.panelErrorID.Size = new System.Drawing.Size(214, 25);
             this.panelErrorID.TabIndex = 36;
             // 
-            // labelErrorDB
+            // labelError
             // 
-            this.labelErrorDB.AutoSize = true;
-            this.labelErrorDB.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelErrorDB.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelErrorDB.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorDB.Location = new System.Drawing.Point(0, 28);
-            this.labelErrorDB.Name = "labelErrorDB";
-            this.labelErrorDB.Size = new System.Drawing.Size(144, 14);
-            this.labelErrorDB.TabIndex = 6;
-            this.labelErrorDB.Text = "* Error de Base de datos *";
-            // 
-            // labelcargando
-            // 
-            this.labelcargando.AutoSize = true;
-            this.labelcargando.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelcargando.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelcargando.ForeColor = System.Drawing.Color.Red;
-            this.labelcargando.Location = new System.Drawing.Point(0, 14);
-            this.labelcargando.Name = "labelcargando";
-            this.labelcargando.Size = new System.Drawing.Size(126, 14);
-            this.labelcargando.TabIndex = 5;
-            this.labelcargando.Text = "* Cargardo Recursos *";
-            // 
-            // labelidnounica
-            // 
-            this.labelidnounica.AutoSize = true;
-            this.labelidnounica.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelidnounica.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelidnounica.ForeColor = System.Drawing.Color.Red;
-            this.labelidnounica.Location = new System.Drawing.Point(0, 0);
-            this.labelidnounica.Name = "labelidnounica";
-            this.labelidnounica.Size = new System.Drawing.Size(145, 14);
-            this.labelidnounica.TabIndex = 1;
-            this.labelidnounica.Text = "X La ID digitada ya existe!";
+            this.labelError.AutoSize = true;
+            this.labelError.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelError.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError.ForeColor = System.Drawing.Color.Red;
+            this.labelError.Location = new System.Drawing.Point(0, 0);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(33, 14);
+            this.labelError.TabIndex = 1;
+            this.labelError.Text = "error";
             // 
             // buttonReg
             // 
@@ -222,10 +194,6 @@
             this.comboBoxGenero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxGenero.Font = new System.Drawing.Font("Lucida Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxGenero.FormattingEnabled = true;
-            this.comboBoxGenero.Items.AddRange(new object[] {
-            "M: Masculino",
-            "F: Femenino",
-            "O: Otro"});
             this.comboBoxGenero.Location = new System.Drawing.Point(262, 231);
             this.comboBoxGenero.Name = "comboBoxGenero";
             this.comboBoxGenero.Size = new System.Drawing.Size(196, 22);
@@ -393,13 +361,11 @@
         private System.Windows.Forms.Panel panelErrorID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxID;
-        private System.Windows.Forms.Label labelidnounica;
+        private System.Windows.Forms.Label labelError;
         private System.Windows.Forms.Panel panelErrorReg;
-        private System.Windows.Forms.Label labelFaltaInfo;
+        private System.Windows.Forms.Label labelErrorBtn;
         private System.Windows.Forms.TextBox textBoxApellido2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label labelcargando;
-        private System.Windows.Forms.Label labelErrorDB;
     }
 }

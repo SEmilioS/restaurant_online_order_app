@@ -28,7 +28,7 @@ allowing users to select restaurants, dishes, and extras, and place their orders
 
 To run the Restaurant Online Ordering App locally, follow these steps:
 
-1. Clone this repository: `git clone https://github.com/yourusername/restaurant_online_order_app.git`
+1. Clone this repository: `git clone https://github.com/SEmilioS/restaurant_online_order_app`
 2. Set up the SQL DataBase using the DB_setup.txt query.
 3. Make sure that the database path concurs with the one instated in the App.config of the Server app.
    By default, the app uses the local or default database of the machine. 

@@ -1,5 +1,7 @@
 ﻿using RestOrderingClases;
 using System;
+using System.Configuration;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace RestOrderingApp.Formularios.Registro
@@ -7,15 +9,41 @@ namespace RestOrderingApp.Formularios.Registro
     public partial class RegCliente : Form
     {
         string[] clienteIDs;
+        private ResourceManager manager = new ResourceManager(typeof(Program));
         public RegCliente()
         {
             InitializeComponent();
+            SetLanguage();
             //esconde los paneles de error
             panelErrorID.Visible = false;
-            labelidnounica.Visible = false;
             panelErrorReg.Visible = false;
-            labelErrorDB.Visible = false;
             CargarIds();
+        }
+
+        private void SetLanguage()
+        {
+            string selectedLanguage = ConfigurationManager.AppSettings["Language"]; // Get language setting from configuration
+
+            if (selectedLanguage == "es")
+            {
+                manager = new ResourceManager($"RestOrderingApp.esCR",
+                                                        typeof(Program).Assembly);
+            }
+            else if (selectedLanguage == "eng")
+            {
+                manager = new ResourceManager($"RestOrderingApp.engUS",
+                                            typeof(Program).Assembly);
+            }
+            label1.Text = manager.GetString("regCliente_titulo");
+            label2.Text = manager.GetString("regCliente_instrucciones");
+            label3.Text = manager.GetString("regCliente_id");
+            label4.Text = manager.GetString("regCliente_nombre");
+            label5.Text = manager.GetString("regCliente_apellido1");
+            label6.Text = manager.GetString("regCliente_nacimiento");
+            label7.Text = manager.GetString("regCliente_genero");
+            label8.Text = manager.GetString("regCliente_apellido2");
+            buttonReg.Text = manager.GetString("reg_boton");
+            comboBoxGenero.Items.AddRange(new object[] { manager.GetString("Genero1"), manager.GetString("Genero2"), manager.GetString("Genero3") });
         }
 
         /// <summary>
@@ -26,19 +54,17 @@ namespace RestOrderingApp.Formularios.Registro
             textBoxID.Enabled = false;
             buttonReg.Enabled = false;
             panelErrorID.Visible = true;
-            labelcargando.Visible = true;
+            labelError.Text = manager.GetString("Reg_Cargando");
             clienteIDs = Program.datosSQL.ObtenerIdCliente();
             if (clienteIDs == null)
             {
                 MessageBox.Show("Hubo un error al obtener informacion de la base de datos.", "Error de información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Program.bitacora.Registros.Add($"{DateTime.Now} Sistema: Error al obtener Id de clientes");
                 Program.bitacora.Nuevolog = true;
-                labelcargando.Visible = false;
-                labelErrorDB.Visible = true;
+                labelError.Text = manager.GetString("Reg_ErrorDataBase");
                 return;
             }
             panelErrorID.Visible = false;
-            labelcargando.Visible = false;
             textBoxID.Enabled = true;
             buttonReg.Enabled = true;
         }
@@ -51,7 +77,6 @@ namespace RestOrderingApp.Formularios.Registro
         private void IdEsValida(object sender, EventArgs e) //verifica si la id es int y valida
         {
             panelErrorID.Visible = false;
-            labelidnounica.Visible = false;
             string id = textBoxID.Text;
             bool noesvalida;
             noesvalida = ExisteID(id); //llama a funcion para verificar si es unico en DB
@@ -59,7 +84,7 @@ namespace RestOrderingApp.Formularios.Registro
             {
                 buttonReg.Enabled = false;
                 panelErrorID.Visible = true;
-                labelidnounica.Visible = true;
+                labelError.Text = manager.GetString("Reg_IdYaExiste");
             }
             else { buttonReg.Enabled = true; }
         }
@@ -111,22 +136,7 @@ namespace RestOrderingApp.Formularios.Registro
                 string apellido1 = textBoxApellido1.Text;
                 string apellido2 = textBoxApellido2.Text;
                 string ItemSeleccionado = comboBoxGenero.SelectedItem.ToString();
-                char genero;
-                switch (ItemSeleccionado)
-                {
-                    case "M: Masculino":
-                        genero = 'M';
-                        break;
-                    case "F: Femenino":
-                        genero = 'F';
-                        break;
-                    case "O: Otro":
-                        genero = 'O';
-                        break;
-                    default:
-                        genero = 'o';
-                        break;
-                }
+                char genero = ItemSeleccionado[0];
                 DateTime nacimiento = dateTimePicker1.Value.Date;
                 Cliente cliente = new Cliente(id, nombre, apellido1, apellido2, nacimiento, genero); //crea el objeto cliente
                 Program.datosSQL.agregarcliente(cliente);//registra el cliente
@@ -142,7 +152,10 @@ namespace RestOrderingApp.Formularios.Registro
                 CargarIds();
             }
             else
-            { panelErrorReg.Visible = true; } //si no tiene los datos correctos o completos muestra error
+            { 
+                panelErrorReg.Visible = true;
+                labelErrorBtn.Text = manager.GetString("Reg_ErrorFaltaInfo");
+            } //si no tiene los datos correctos o completos muestra error
         }
     }
 }

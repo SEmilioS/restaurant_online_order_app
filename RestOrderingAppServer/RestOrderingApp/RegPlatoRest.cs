@@ -1,6 +1,8 @@
 ﻿using RestOrderingClases;
 using System;
+using System.Configuration;
 using System.Drawing;
+using System.Resources;
 using System.Windows.Forms;
 
 namespace RestOrderingApp.Formularios.Registro
@@ -10,20 +12,19 @@ namespace RestOrderingApp.Formularios.Registro
         private Plato[] platos;
         private PlatoRestaurante[] platosRestaurante;
         private Restaurante[] restaurantes;
+        private ResourceManager manager = new ResourceManager(typeof(Program));
         public RegPlatoRest()
         {
             InitializeComponent();
+            SetLanguage();
             panelErrorRest.Visible = false;
-            labelnorest.Visible = false;
-            labelnoseleccion.Visible = false;
-            panelErrorReg.Visible = false;
             panelerrorplato.Visible = false;
             CargarArrays();
             if (restaurantes == null || restaurantes.Length == 0) //revisa si existen restaurantes
             {
                 buttonAso.Enabled = false; //no existen, por lo que no permite continuar
                 panelErrorRest.Visible = true;
-                labelnorest.Visible = true; //mensaje de no hay restaurante
+                labelError.Text = manager.GetString("regPlatoRest_ErrorNoRest"); //mensaje de no hay restaurante
             }
             else //si hay restaurantes
             {
@@ -32,12 +33,35 @@ namespace RestOrderingApp.Formularios.Registro
                 {
                     buttonAso.Enabled = false;//no hay, no permite continuar
                     panelerrorplato.Visible = true;
+                    labelErrorPlat.Text = manager.GetString("regPlatoRest_ErrorNoPlat");
                 }
                 else if (platosRestaurante == null)
                 {
                     buttonAso.Enabled = false;
                 }
             }
+        }
+
+        private void SetLanguage()
+        {
+            string selectedLanguage = ConfigurationManager.AppSettings["Language"]; // Get language setting from configuration
+
+            if (selectedLanguage == "es")
+            {
+                manager = new ResourceManager($"RestOrderingApp.esCR",
+                                                        typeof(Program).Assembly);
+            }
+            else if (selectedLanguage == "eng")
+            {
+                manager = new ResourceManager($"RestOrderingApp.engUS",
+                                            typeof(Program).Assembly);
+            }
+            label1.Text = manager.GetString("regPlatoRest_titulo");
+            label2.Text = manager.GetString("regPlatoRest_instrucciones");
+            label3.Text = manager.GetString("regPlatoRest_platos");
+            label4.Text = manager.GetString("regPlatoRest_platosAso");
+            label7.Text = manager.GetString("regPlatoRest_restaurante");
+            buttonAso.Text = manager.GetString("regPlatoRest_asociar");
         }
 
         /// <summary>
@@ -47,12 +71,12 @@ namespace RestOrderingApp.Formularios.Registro
         {
             buttonAso.Enabled = false;
             panelErrorRest.Visible = true;
-            labelcargando.Visible = true;
+            labelError.Text = manager.GetString("reg_Cargando");
             platos = Program.datosSQL.ObtenerPlatos();
             restaurantes = Program.datosSQL.ObtenerRestaurantes();
             platosRestaurante = Program.datosSQL.ObtenerPlatoRest(restaurantes, platos);
             panelErrorRest.Visible = false;
-            labelcargando.Visible = false;
+
             buttonAso.Enabled = true;
         }
 
@@ -124,10 +148,10 @@ namespace RestOrderingApp.Formularios.Registro
             dataGridView.DefaultCellStyle.Font = new Font("Arial", 12);
             dataGridView.DefaultCellStyle.ForeColor = Color.Black;
             dataGridView.ColumnCount = 4;
-            dataGridView.Columns[0].Name = "Id del plato";
-            dataGridView.Columns[1].Name = "Nombre del plato";
-            dataGridView.Columns[2].Name = "Precio";
-            dataGridView.Columns[3].Name = "Categoría";
+            dataGridView.Columns[0].Name = manager.GetString("Columna_IDPlato");
+            dataGridView.Columns[1].Name = manager.GetString("Columna_NombrePlato");
+            dataGridView.Columns[2].Name = manager.GetString("Columna_Precio");
+            dataGridView.Columns[3].Name = manager.GetString("Columna_Categoria");
 
             Restaurante RestauranteSeleccionado = restseleccionado(); //obtiene el restaurante selccionado
 
@@ -145,7 +169,7 @@ namespace RestOrderingApp.Formularios.Registro
 
             //agrega un check box para seleccionar los platos
             DataGridViewCheckBoxColumn checkBoxColumna = new DataGridViewCheckBoxColumn();
-            checkBoxColumna.Name = "Seleccionar";
+            checkBoxColumna.Name = manager.GetString("Columna_Seleccionar");
             dataGridView.Columns.Add(checkBoxColumna);
 
             foreach (DataGridViewColumn columna in dataGridView.Columns) //hace que todo sea Read only menos el checkbox
@@ -193,11 +217,11 @@ namespace RestOrderingApp.Formularios.Registro
 
             foreach (DataGridViewRow fila in dataGridView.Rows)//revisa cada fila de la tabla 
             {
-                DataGridViewCheckBoxCell checkBoxCell = fila.Cells["Seleccionar"] as DataGridViewCheckBoxCell; //copia la columna de seleccion
+                DataGridViewCheckBoxCell checkBoxCell = fila.Cells[manager.GetString("Columna_Seleccionar")] as DataGridViewCheckBoxCell; //copia la columna de seleccion
 
                 if (checkBoxCell.Value != null && (bool)checkBoxCell.Value) // revisa el valor de selccion
                 {
-                    int id = Convert.ToInt32(fila.Cells["Id del plato"].Value); //si esta seleccionado, toma el id del plato
+                    int id = Convert.ToInt32(fila.Cells[manager.GetString("Columna_IDPlato")].Value); //si esta seleccionado, toma el id del plato
                     foreach (Plato plat in platos) //busca y guarda el plato en el array
                     {
                         if (plat != null && plat.ID == id)
@@ -227,10 +251,10 @@ namespace RestOrderingApp.Formularios.Registro
             dataGridView2.DefaultCellStyle.Font = new Font("Arial", 12);
             dataGridView2.DefaultCellStyle.ForeColor = Color.Black;
             dataGridView2.ColumnCount = 4;
-            dataGridView2.Columns[0].Name = "Id del plato";
-            dataGridView2.Columns[1].Name = "Nombre del plato";
-            dataGridView2.Columns[2].Name = "Precio";
-            dataGridView2.Columns[3].Name = "Categoría";
+            dataGridView2.Columns[0].Name = manager.GetString("Columna_IDPlato");
+            dataGridView2.Columns[1].Name = manager.GetString("Columna_NombrePlato");
+            dataGridView2.Columns[2].Name = manager.GetString("Columna_Precio");
+            dataGridView2.Columns[3].Name = manager.GetString("Columna_Categoria");
 
             Restaurante RestauranteSeleccionado = restseleccionado();
 
@@ -268,7 +292,7 @@ namespace RestOrderingApp.Formularios.Registro
 
             foreach (DataGridViewRow fila in dataGridView.Rows)
             {
-                DataGridViewCheckBoxCell checkBoxCasilla = fila.Cells["Seleccionar"] as DataGridViewCheckBoxCell;
+                DataGridViewCheckBoxCell checkBoxCasilla = fila.Cells[manager.GetString("Columna_Seleccionar")] as DataGridViewCheckBoxCell;
 
                 if (checkBoxCasilla.Value != null && (bool)checkBoxCasilla.Value)
                 {
@@ -312,21 +336,21 @@ namespace RestOrderingApp.Formularios.Registro
             //veirifa que se haya seleccionado un plato
             if (PlatosSeleccionadosCuenta == 0)
             {
-                MessageBox.Show("Debe seleccionar al menos un plato.", "Selección requerida", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"{manager.GetString("regPlatoRest_M1_info")}", $"{manager.GetString("regPlatoRest_M1_tipo")}", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             //si se seleccionaron mas de 10 platos muestra advetencia, debe selecionar menos
             if (PlatosSeleccionadosCuenta > 10)
             {
-                MessageBox.Show("Solo se pueden asociar 10 platos por registro.", "Límite de selección sobrepasado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"{manager.GetString("regPlatoRest_M2_info")}", $"{manager.GetString("regPlatoRest_M2_tipo")}", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
             //si se seleccionaron menos de 10 platos pregunta si desea agregar más
             else if (PlatosSeleccionadosCuenta < 10)
             {
-                DialogResult result = MessageBox.Show($"Usted ha seleccionado {PlatosSeleccionadosCuenta} platos. ¿Desea agregar más? El máximo es 10.", "Selección adicional", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show($"{manager.GetString("regPlatoRest_M3_info1")} {PlatosSeleccionadosCuenta} {manager.GetString("regPlatoRest_M3_info2")}", $"{manager.GetString("regPlatoRest_M3_tipo")}", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                     return;
@@ -335,7 +359,7 @@ namespace RestOrderingApp.Formularios.Registro
             //si selecciono 10 platos exactos, pregunta si está seguro de su seleccion, dando opcion para cambiar algun plato
             else if (PlatosSeleccionadosCuenta == 10)
             {
-                DialogResult result = MessageBox.Show("Usted ha seleccionado 10 platos. 10 es el límite máximo. ¿Desea registrar la asociación? Seleccione No para cambiar su selección de platos.", "Selección con límite máximo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show($"{manager.GetString("regPlatoRest_M4_info")}", $"{manager.GetString("regPlatoRest_M4_tipo")}", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.No)
                     return;
@@ -348,7 +372,7 @@ namespace RestOrderingApp.Formularios.Registro
             PlatoRestaurante platorest = new PlatoRestaurante(idAsig, selectedRestaurante, DateTime.Now, selectedPlatos); //Crea el objeto
             Program.datosSQL.agregarplatorest(platorest); //lo registra
 
-            MessageBox.Show("Platos asociados correctamente.", "Asociación exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information); //muestra mesaje de confirmacion
+            MessageBox.Show($"{manager.GetString("regPlatoRest_M5_info")}", $"{manager.GetString("regPlatoRest_M5_tipo")}", MessageBoxButtons.OK, MessageBoxIcon.Information); //muestra mesaje de confirmacion
 
             //limpia el formulario
             CargarArrays();

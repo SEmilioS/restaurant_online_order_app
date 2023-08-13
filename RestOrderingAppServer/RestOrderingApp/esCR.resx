@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Bitacora_instrucciones" xml:space="preserve">
+    <value>A continuación se muestran todos los eventos registrados:</value>
+  </data>
+  <data name="Bitacora_titulo" xml:space="preserve">
+    <value>Bitácora</value>
+  </data>
+  <data name="Columna_Categoria" xml:space="preserve">
+    <value>Categoría</value>
+  </data>
+  <data name="Columna_IDPlato" xml:space="preserve">
+    <value>Id del plato</value>
+  </data>
+  <data name="Columna_NombrePlato" xml:space="preserve">
+    <value>Nombre del plato</value>
+  </data>
+  <data name="Columna_Precio" xml:space="preserve">
+    <value>Precio</value>
+  </data>
+  <data name="Columna_Seleccionar" xml:space="preserve">
+    <value>Seleccionar</value>
+  </data>
+  <data name="D_buttonBitacora" xml:space="preserve">
+    <value>Bitácora</value>
+  </data>
+  <data name="D_conCatPlato" xml:space="preserve">
+    <value>Categorías de Platos</value>
+  </data>
+  <data name="D_conCliente" xml:space="preserve">
+    <value>Clientes</value>
+  </data>
+  <data name="D_conExtras" xml:space="preserve">
+    <value>Extras</value>
+  </data>
+  <data name="D_conPlato" xml:space="preserve">
+    <value>Platos</value>
+  </data>
+  <data name="D_conPlatoRest" xml:space="preserve">
+    <value>Platos por Restaurante</value>
+  </data>
+  <data name="D_conRestaurante" xml:space="preserve">
+    <value>Restaurantes</value>
+  </data>
+  <data name="D_ConsultarBtn" xml:space="preserve">
+    <value>Consultar</value>
+  </data>
+  <data name="D_regCatPlato" xml:space="preserve">
+    <value>Categoría de Plato</value>
+  </data>
+  <data name="D_regCliente" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="D_regExtra" xml:space="preserve">
+    <value>Extra</value>
+  </data>
+  <data name="D_RegistrarBtn" xml:space="preserve">
+    <value>Registrar</value>
+  </data>
+  <data name="D_regPlato" xml:space="preserve">
+    <value>Plato</value>
+  </data>
+  <data name="D_regPlatoRest" xml:space="preserve">
+    <value>Platos por Restaurante</value>
+  </data>
+  <data name="D_regRestaurante" xml:space="preserve">
+    <value>Restaurante</value>
+  </data>
+  <data name="D_UsuCuenta" xml:space="preserve">
+    <value>Usuarios Conectados:</value>
+  </data>
+  <data name="Estado1" xml:space="preserve">
+    <value>Activo</value>
+  </data>
+  <data name="Estado2" xml:space="preserve">
+    <value>Inactivo</value>
+  </data>
+  <data name="Genero1" xml:space="preserve">
+    <value>F: Femenino</value>
+  </data>
+  <data name="Genero2" xml:space="preserve">
+    <value>M: Masculino</value>
+  </data>
+  <data name="Genero3" xml:space="preserve">
+    <value>O: otro</value>
+  </data>
+  <data name="regCat_descripcion" xml:space="preserve">
+    <value>Descripción de la categoría:</value>
+  </data>
+  <data name="regCat_estado" xml:space="preserve">
+    <value>Estado de la categoría:</value>
+  </data>
+  <data name="regCat_id" xml:space="preserve">
+    <value>Identificación de la categoría:</value>
+  </data>
+  <data name="regCat_instrucciones" xml:space="preserve">
+    <value>Llene todos los apartados para registrar una categoría.</value>
+  </data>
+  <data name="regCat_titulo" xml:space="preserve">
+    <value>Registro de Categoría de Plato</value>
+  </data>
+  <data name="regCliente_apellido1" xml:space="preserve">
+    <value>Primer Apellido del Cliente:</value>
+  </data>
+  <data name="regCliente_apellido2" xml:space="preserve">
+    <value>Segundo Apellido del Cliente:</value>
+  </data>
+  <data name="regCliente_genero" xml:space="preserve">
+    <value>Genero del cliente:</value>
+  </data>
+  <data name="regCliente_id" xml:space="preserve">
+    <value>Identificación del Cliente:</value>
+  </data>
+  <data name="regCliente_instrucciones" xml:space="preserve">
+    <value>Llene todos los apartados para registrar un cliente.</value>
+  </data>
+  <data name="regCliente_nacimiento" xml:space="preserve">
+    <value>Fecha de nacimineto:</value>
+  </data>
+  <data name="regCliente_nombre" xml:space="preserve">
+    <value>Nombre del cliente:</value>
+  </data>
+  <data name="regCliente_titulo" xml:space="preserve">
+    <value>Registro de Cliente</value>
+  </data>
+  <data name="regExtra_descripcion" xml:space="preserve">
+    <value>Descripción del Extra:</value>
+  </data>
+  <data name="regExtra_estado" xml:space="preserve">
+    <value>Estado del Extra:</value>
+  </data>
+  <data name="regExtra_id" xml:space="preserve">
+    <value>Identificación del Extra:</value>
+  </data>
+  <data name="regExtra_idCat" xml:space="preserve">
+    <value>ID de la Categoría del Extra:</value>
+  </data>
+  <data name="regExtra_instrucciones" xml:space="preserve">
+    <value>Llene todos los apartados para registrar un extra.</value>
+  </data>
+  <data name="regExtra_precio" xml:space="preserve">
+    <value>Precio del Extra:</value>
+  </data>
+  <data name="regExtra_titulo" xml:space="preserve">
+    <value>Registro de Extra</value>
+  </data>
+  <data name="regPlatoRest_asociar" xml:space="preserve">
+    <value>Asociar</value>
+  </data>
+  <data name="regPlatoRest_ErrorNoPlat" xml:space="preserve">
+    <value>Debe registrar un plato primero!</value>
+  </data>
+  <data name="regPlatoRest_ErrorNoRest" xml:space="preserve">
+    <value>Debe registrar un restaurante primero!</value>
+  </data>
+  <data name="regPlatoRest_ErrorRest" xml:space="preserve">
+    <value>Debe seleccionar un restaurante</value>
+  </data>
+  <data name="regPlatoRest_instrucciones" xml:space="preserve">
+    <value>Seleccione un restaurante y los platos a asociar.</value>
+  </data>
+  <data name="regPlatoRest_M1_info" xml:space="preserve">
+    <value>Debe seleccionar al menos un plato.</value>
+  </data>
+  <data name="regPlatoRest_M1_tipo" xml:space="preserve">
+    <value>Selección requerida</value>
+  </data>
+  <data name="regPlatoRest_M2_info" xml:space="preserve">
+    <value>Solo se pueden asociar 10 platos por registro.</value>
+  </data>
+  <data name="regPlatoRest_M2_tipo" xml:space="preserve">
+    <value>Límite de selección sobrepasado</value>
+  </data>
+  <data name="regPlatoRest_M3_info1" xml:space="preserve">
+    <value>Usted ha seleccionado</value>
+  </data>
+  <data name="regPlatoRest_M3_info2" xml:space="preserve">
+    <value>platos. ¿Desea agregar más? El máximo es 10.</value>
+  </data>
+  <data name="regPlatoRest_M3_tipo" xml:space="preserve">
+    <value>Selección adicional</value>
+  </data>
+  <data name="regPlatoRest_M4_info" xml:space="preserve">
+    <value>Usted ha seleccionado 10 platos. 10 es el límite máximo. ¿Desea registrar la asociación? Seleccione No para cambiar su selección de platos.</value>
+  </data>
+  <data name="regPlatoRest_M4_tipo" xml:space="preserve">
+    <value>Selección con límite máximo</value>
+  </data>
+  <data name="regPlatoRest_M5_info" xml:space="preserve">
+    <value>Platos asociados correctamente.</value>
+  </data>
+  <data name="regPlatoRest_M5_tipo" xml:space="preserve">
+    <value>Asociación exitosa</value>
+  </data>
+  <data name="regPlatoRest_platos" xml:space="preserve">
+    <value>Platos disponibles:</value>
+  </data>
+  <data name="regPlatoRest_platosAso" xml:space="preserve">
+    <value>Platos asociados:</value>
+  </data>
+  <data name="regPlatoRest_restaurante" xml:space="preserve">
+    <value>Restaurantes disponibles:</value>
+  </data>
+  <data name="regPlatoRest_titulo" xml:space="preserve">
+    <value>Registro de Plato por Restaurante</value>
+  </data>
+  <data name="regPlato_ErrorCat" xml:space="preserve">
+    <value>Debe registrar una categoría de plato primero!</value>
+  </data>
+  <data name="regPlato_id" xml:space="preserve">
+    <value>Indentificación del Plato:</value>
+  </data>
+  <data name="regPlato_idCat" xml:space="preserve">
+    <value>ID de la Categoria del Plato:</value>
+  </data>
+  <data name="regPlato_instrucciones" xml:space="preserve">
+    <value>Llene todos los apartados para registrar un plato.</value>
+  </data>
+  <data name="regPlato_nombre" xml:space="preserve">
+    <value>Nombre del Plato:</value>
+  </data>
+  <data name="regPlato_precio" xml:space="preserve">
+    <value>Precio del Plato:</value>
+  </data>
+  <data name="regPlato_titulo" xml:space="preserve">
+    <value>Registro de Plato</value>
+  </data>
+  <data name="regRest_direccion" xml:space="preserve">
+    <value>Dirección del Restaurante:</value>
+  </data>
+  <data name="regRest_estado" xml:space="preserve">
+    <value>Estado del Restaurante:</value>
+  </data>
+  <data name="regRest_id" xml:space="preserve">
+    <value>Identificación del Restaurante:</value>
+  </data>
+  <data name="regRest_instrucciones" xml:space="preserve">
+    <value>Llene todos los apartados para registrar un restaurante.</value>
+  </data>
+  <data name="regRest_nombre" xml:space="preserve">
+    <value>Nombre del Restaurante:</value>
+  </data>
+  <data name="regRest_telefono" xml:space="preserve">
+    <value>Telefono del Restaurante:</value>
+  </data>
+  <data name="regRest_titulo" xml:space="preserve">
+    <value>Registro de Restaurante</value>
+  </data>
+  <data name="reg_boton" xml:space="preserve">
+    <value>Registrar</value>
+  </data>
+  <data name="Reg_Cargando" xml:space="preserve">
+    <value>Cargardo Recursos</value>
+  </data>
+  <data name="Reg_ErrorDataBase" xml:space="preserve">
+    <value>Error de Base de datos</value>
+  </data>
+  <data name="Reg_ErrorFaltaInfo" xml:space="preserve">
+    <value>Debe llenar todos los apartados con el formato correcto!</value>
+  </data>
+  <data name="Reg_ErrorNoInt" xml:space="preserve">
+    <value>Debe ser un numero entero positivo!</value>
+  </data>
+  <data name="Reg_IdNoExiste" xml:space="preserve">
+    <value>La ID digitada no existe!</value>
+  </data>
+  <data name="Reg_IdYaExiste" xml:space="preserve">
+    <value>La ID digitada ya existe!</value>
+  </data>
+</root>

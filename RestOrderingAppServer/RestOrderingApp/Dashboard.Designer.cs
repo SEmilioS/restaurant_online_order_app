@@ -32,12 +32,12 @@
             this.panelmenulateral = new System.Windows.Forms.Panel();
             this.panelConsultarSubMenu = new System.Windows.Forms.Panel();
             this.conExtras = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.conPlatoRest = new System.Windows.Forms.Button();
+            this.conCliente = new System.Windows.Forms.Button();
             this.conPlato = new System.Windows.Forms.Button();
             this.conCatPlato = new System.Windows.Forms.Button();
             this.conRestaurante = new System.Windows.Forms.Button();
-            this.ConsultarBoton = new System.Windows.Forms.Button();
+            this.ConsultarBtn = new System.Windows.Forms.Button();
             this.panelRegistrarSubMenu = new System.Windows.Forms.Panel();
             this.regExtras = new System.Windows.Forms.Button();
             this.regPlatoRest = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@
             this.panelmenulateral.AutoScroll = true;
             this.panelmenulateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(62)))), ((int)(((byte)(82)))));
             this.panelmenulateral.Controls.Add(this.panelConsultarSubMenu);
-            this.panelmenulateral.Controls.Add(this.ConsultarBoton);
+            this.panelmenulateral.Controls.Add(this.ConsultarBtn);
             this.panelmenulateral.Controls.Add(this.panelRegistrarSubMenu);
             this.panelmenulateral.Controls.Add(this.RegistrarBtn);
             this.panelmenulateral.Controls.Add(this.buttonBitacora);
@@ -79,8 +79,8 @@
             // 
             this.panelConsultarSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(120)))), ((int)(((byte)(158)))));
             this.panelConsultarSubMenu.Controls.Add(this.conExtras);
-            this.panelConsultarSubMenu.Controls.Add(this.button9);
             this.panelConsultarSubMenu.Controls.Add(this.conPlatoRest);
+            this.panelConsultarSubMenu.Controls.Add(this.conCliente);
             this.panelConsultarSubMenu.Controls.Add(this.conPlato);
             this.panelConsultarSubMenu.Controls.Add(this.conCatPlato);
             this.panelConsultarSubMenu.Controls.Add(this.conRestaurante);
@@ -102,27 +102,10 @@
             this.conExtras.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.conExtras.Size = new System.Drawing.Size(233, 41);
             this.conExtras.TabIndex = 5;
-            this.conExtras.Text = "Extras";
+            this.conExtras.Text = "conExtras";
             this.conExtras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.conExtras.UseVisualStyleBackColor = true;
             this.conExtras.Click += new System.EventHandler(this.con_extras);
-            // 
-            // button9
-            // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(0, 164);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(233, 41);
-            this.button9.TabIndex = 4;
-            this.button9.Text = "Platos por Restaurante";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.con_platorest);
             // 
             // conPlatoRest
             // 
@@ -131,15 +114,32 @@
             this.conPlatoRest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.conPlatoRest.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.conPlatoRest.ForeColor = System.Drawing.Color.White;
-            this.conPlatoRest.Location = new System.Drawing.Point(0, 123);
+            this.conPlatoRest.Location = new System.Drawing.Point(0, 164);
             this.conPlatoRest.Name = "conPlatoRest";
             this.conPlatoRest.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.conPlatoRest.Size = new System.Drawing.Size(233, 41);
-            this.conPlatoRest.TabIndex = 3;
-            this.conPlatoRest.Text = "Clientes";
+            this.conPlatoRest.TabIndex = 4;
+            this.conPlatoRest.Text = "conPlatoRest";
             this.conPlatoRest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.conPlatoRest.UseVisualStyleBackColor = true;
-            this.conPlatoRest.Click += new System.EventHandler(this.con_clientes);
+            this.conPlatoRest.Click += new System.EventHandler(this.con_platorest);
+            // 
+            // conCliente
+            // 
+            this.conCliente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.conCliente.FlatAppearance.BorderSize = 0;
+            this.conCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.conCliente.Font = new System.Drawing.Font("Lucida Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conCliente.ForeColor = System.Drawing.Color.White;
+            this.conCliente.Location = new System.Drawing.Point(0, 123);
+            this.conCliente.Name = "conCliente";
+            this.conCliente.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.conCliente.Size = new System.Drawing.Size(233, 41);
+            this.conCliente.TabIndex = 3;
+            this.conCliente.Text = "conCliente";
+            this.conCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.conCliente.UseVisualStyleBackColor = true;
+            this.conCliente.Click += new System.EventHandler(this.con_clientes);
             // 
             // conPlato
             // 
@@ -153,7 +153,7 @@
             this.conPlato.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.conPlato.Size = new System.Drawing.Size(233, 41);
             this.conPlato.TabIndex = 2;
-            this.conPlato.Text = "Platos";
+            this.conPlato.Text = "conPlato";
             this.conPlato.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.conPlato.UseVisualStyleBackColor = true;
             this.conPlato.Click += new System.EventHandler(this.con_platos);
@@ -170,7 +170,7 @@
             this.conCatPlato.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.conCatPlato.Size = new System.Drawing.Size(233, 41);
             this.conCatPlato.TabIndex = 1;
-            this.conCatPlato.Text = "Categorías de Platos";
+            this.conCatPlato.Text = "conCatPlato";
             this.conCatPlato.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.conCatPlato.UseVisualStyleBackColor = true;
             this.conCatPlato.Click += new System.EventHandler(this.con_categoria);
@@ -187,27 +187,27 @@
             this.conRestaurante.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.conRestaurante.Size = new System.Drawing.Size(233, 41);
             this.conRestaurante.TabIndex = 0;
-            this.conRestaurante.Text = "Restaurantes";
+            this.conRestaurante.Text = "conRestaurante";
             this.conRestaurante.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.conRestaurante.UseVisualStyleBackColor = true;
             this.conRestaurante.Click += new System.EventHandler(this.con_restaurantes);
             // 
-            // ConsultarBoton
+            // ConsultarBtn
             // 
-            this.ConsultarBoton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ConsultarBoton.FlatAppearance.BorderSize = 0;
-            this.ConsultarBoton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConsultarBoton.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ConsultarBoton.ForeColor = System.Drawing.Color.White;
-            this.ConsultarBoton.Location = new System.Drawing.Point(0, 436);
-            this.ConsultarBoton.Name = "ConsultarBoton";
-            this.ConsultarBoton.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ConsultarBoton.Size = new System.Drawing.Size(233, 45);
-            this.ConsultarBoton.TabIndex = 9;
-            this.ConsultarBoton.Text = "Consultar";
-            this.ConsultarBoton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ConsultarBoton.UseVisualStyleBackColor = true;
-            this.ConsultarBoton.Click += new System.EventHandler(this.ConsultarBoton_Click);
+            this.ConsultarBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ConsultarBtn.FlatAppearance.BorderSize = 0;
+            this.ConsultarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConsultarBtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultarBtn.ForeColor = System.Drawing.Color.White;
+            this.ConsultarBtn.Location = new System.Drawing.Point(0, 436);
+            this.ConsultarBtn.Name = "ConsultarBtn";
+            this.ConsultarBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ConsultarBtn.Size = new System.Drawing.Size(233, 45);
+            this.ConsultarBtn.TabIndex = 9;
+            this.ConsultarBtn.Text = "ConsultarBtn";
+            this.ConsultarBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ConsultarBtn.UseVisualStyleBackColor = true;
+            this.ConsultarBtn.Click += new System.EventHandler(this.ConsultarBoton_Click);
             // 
             // panelRegistrarSubMenu
             // 
@@ -236,7 +236,7 @@
             this.regExtras.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.regExtras.Size = new System.Drawing.Size(233, 41);
             this.regExtras.TabIndex = 5;
-            this.regExtras.Text = "Extras";
+            this.regExtras.Text = "regExtra";
             this.regExtras.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.regExtras.UseVisualStyleBackColor = true;
             this.regExtras.Click += new System.EventHandler(this.reg_extra);
@@ -253,7 +253,7 @@
             this.regPlatoRest.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.regPlatoRest.Size = new System.Drawing.Size(233, 41);
             this.regPlatoRest.TabIndex = 4;
-            this.regPlatoRest.Text = "Platos por Restaurante";
+            this.regPlatoRest.Text = "regPlatoRest";
             this.regPlatoRest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.regPlatoRest.UseVisualStyleBackColor = true;
             this.regPlatoRest.Click += new System.EventHandler(this.reg_platorest);
@@ -270,7 +270,7 @@
             this.regCliente.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.regCliente.Size = new System.Drawing.Size(233, 41);
             this.regCliente.TabIndex = 3;
-            this.regCliente.Text = "Cliente";
+            this.regCliente.Text = "regCliente";
             this.regCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.regCliente.UseVisualStyleBackColor = true;
             this.regCliente.Click += new System.EventHandler(this.reg_cliente);
@@ -287,7 +287,7 @@
             this.regPlato.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.regPlato.Size = new System.Drawing.Size(233, 41);
             this.regPlato.TabIndex = 2;
-            this.regPlato.Text = "Plato";
+            this.regPlato.Text = "regPlato";
             this.regPlato.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.regPlato.UseVisualStyleBackColor = true;
             this.regPlato.Click += new System.EventHandler(this.reg_plato);
@@ -304,7 +304,7 @@
             this.regCatPlato.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.regCatPlato.Size = new System.Drawing.Size(233, 41);
             this.regCatPlato.TabIndex = 1;
-            this.regCatPlato.Text = "Categoría de Plato";
+            this.regCatPlato.Text = "regCatPlato";
             this.regCatPlato.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.regCatPlato.UseVisualStyleBackColor = true;
             this.regCatPlato.Click += new System.EventHandler(this.reg_categoria);
@@ -321,7 +321,7 @@
             this.regRestaurante.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.regRestaurante.Size = new System.Drawing.Size(233, 41);
             this.regRestaurante.TabIndex = 0;
-            this.regRestaurante.Text = "Restaurante";
+            this.regRestaurante.Text = "regRestaurante";
             this.regRestaurante.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.regRestaurante.UseVisualStyleBackColor = true;
             this.regRestaurante.Click += new System.EventHandler(this.reg_restaurante);
@@ -338,7 +338,7 @@
             this.RegistrarBtn.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.RegistrarBtn.Size = new System.Drawing.Size(233, 45);
             this.RegistrarBtn.TabIndex = 7;
-            this.RegistrarBtn.Text = "Registrar";
+            this.RegistrarBtn.Text = "RegistrarBtn";
             this.RegistrarBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.RegistrarBtn.UseVisualStyleBackColor = true;
             this.RegistrarBtn.Click += new System.EventHandler(this.RegistrarBoton_Click);
@@ -355,7 +355,7 @@
             this.buttonBitacora.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonBitacora.Size = new System.Drawing.Size(233, 45);
             this.buttonBitacora.TabIndex = 6;
-            this.buttonBitacora.Text = "Bitacora";
+            this.buttonBitacora.Text = "buttonBitacora";
             this.buttonBitacora.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBitacora.UseVisualStyleBackColor = true;
             this.buttonBitacora.Click += new System.EventHandler(this.bitacora_click);
@@ -372,7 +372,7 @@
             this.UsuCuenta.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.UsuCuenta.Size = new System.Drawing.Size(233, 45);
             this.UsuCuenta.TabIndex = 5;
-            this.UsuCuenta.Text = "Usuarios Conectados: ";
+            this.UsuCuenta.Text = "UsuCuenta";
             this.UsuCuenta.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.UsuCuenta.UseVisualStyleBackColor = true;
             this.UsuCuenta.Click += new System.EventHandler(this.usucuenta_click);
@@ -440,12 +440,12 @@
         private System.Windows.Forms.Button UsuCuenta;
         private System.Windows.Forms.Panel panelConsultarSubMenu;
         private System.Windows.Forms.Button conExtras;
-        private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button conPlatoRest;
+        private System.Windows.Forms.Button conCliente;
         private System.Windows.Forms.Button conPlato;
         private System.Windows.Forms.Button conCatPlato;
         private System.Windows.Forms.Button conRestaurante;
-        private System.Windows.Forms.Button ConsultarBoton;
+        private System.Windows.Forms.Button ConsultarBtn;
         private System.Windows.Forms.Panel panelRegistrarSubMenu;
         private System.Windows.Forms.Button regExtras;
         private System.Windows.Forms.Button regPlatoRest;
