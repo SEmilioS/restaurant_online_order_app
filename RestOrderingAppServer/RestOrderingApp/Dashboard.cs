@@ -5,7 +5,6 @@ using RestOrderingApp.Formularios.Consulta;
 using RestOrderingApp.Formularios.Log;
 using RestOrderingApp.Formularios.Registro;
 using System.Resources;
-using System.Configuration;
 
 namespace RestOrderingApp.Formularios.MenuPrincipal
 {
@@ -26,19 +25,8 @@ namespace RestOrderingApp.Formularios.MenuPrincipal
         {
             ResourceManager _resourceManager = new ResourceManager(typeof(Program));
 
-            string selectedLanguage = ConfigurationManager.AppSettings["Language"]; // Get language setting from configuration
-
-            if (selectedLanguage == "es")
-            {
-                _resourceManager = new ResourceManager($"RestOrderingApp.esCR",
-                                                        typeof(Program).Assembly);
-            }
-            else if (selectedLanguage == "eng")
-            {
-                _resourceManager = new ResourceManager($"RestOrderingApp.engUS",
-                                            typeof(Program).Assembly);
-            }
-
+            SelectorLenguaje sl = new SelectorLenguaje();
+            _resourceManager = sl.CargarLenguaje();
             buttonBitacora.Text = _resourceManager.GetString("D_buttonBitacora");
             conExtras.Text = _resourceManager.GetString("D_conExtras");
             conPlatoRest.Text = _resourceManager.GetString("D_conPlatoRest");

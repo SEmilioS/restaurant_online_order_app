@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Configuration;
-using System.Reflection.Emit;
 using System.Resources;
 using System.Text;
 using System.Windows.Forms;
@@ -26,18 +24,8 @@ namespace RestOrderingApp.Formularios.Log
 
         private void SetLanguage()
         {
-            string selectedLanguage = ConfigurationManager.AppSettings["Language"]; // Get language setting from configuration
-
-            if (selectedLanguage == "es")
-            {
-                manager = new ResourceManager($"RestOrderingApp.esCR",
-                                                        typeof(Program).Assembly);
-            }
-            else if (selectedLanguage == "eng")
-            {
-                manager = new ResourceManager($"RestOrderingApp.engUS",
-                                            typeof(Program).Assembly);
-            }
+            SelectorLenguaje sl = new SelectorLenguaje();
+            manager = sl.CargarLenguaje();
             label1.Text = manager.GetString("Bitacora_titulo");
             label2.Text = manager.GetString("Bitacora_instrucciones");
         }

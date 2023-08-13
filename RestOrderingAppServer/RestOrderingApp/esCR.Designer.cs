@@ -61,6 +61,24 @@ namespace RestOrderingApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Servidor: Se ha eliminado la sesión con IdSesion:.
+        /// </summary>
+        internal static string bitacora_adminSesiones_M1_1 {
+            get {
+                return ResourceManager.GetString("bitacora_adminSesiones_M1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to debido a inactividad..
+        /// </summary>
+        internal static string bitacora_adminSesiones_M1_2 {
+            get {
+                return ResourceManager.GetString("bitacora_adminSesiones_M1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A continuación se muestran todos los eventos registrados:.
         /// </summary>
         internal static string Bitacora_instrucciones {

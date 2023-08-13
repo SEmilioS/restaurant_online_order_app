@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Resources;
 
 namespace RestOrderingApp.Server.Sesiones
 {
@@ -10,6 +11,7 @@ namespace RestOrderingApp.Server.Sesiones
         private object ClientesAutenticadosLock = new object();
         private TimeSpan DuracionSesion = TimeSpan.FromMinutes(20);
         private Timer sesionesExpiradasTimer;
+        private ResourceManager manager = new ResourceManager(typeof(Program));
 
         public AdministradorSesiones()
         {
@@ -61,7 +63,9 @@ namespace RestOrderingApp.Server.Sesiones
                 {
                     Interlocked.Decrement(ref Program.usuariosautenticados);
                     ClientesAutenticados.Remove(sessionID);
-                    Program.bitacora.Registros.Add($"{DateTime.Now} Servidor: Se ha eliminado la sesión con IdSesion: {sessionID} debido a inactividad.");
+                    SelectorLenguaje sl = new SelectorLenguaje();
+                    manager = sl.CargarLenguaje();
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_adminSesiones_M1_1")} {sessionID} {manager.GetString("bitacora_adminSesiones_M1_2")}");
                     Program.bitacora.Nuevolog = true;
                 }
             }

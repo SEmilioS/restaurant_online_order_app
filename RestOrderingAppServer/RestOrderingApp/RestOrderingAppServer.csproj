@@ -194,6 +194,7 @@
     <Compile Include="RegRestaurante.Designer.cs">
       <DependentUpon>RegRestaurante.cs</DependentUpon>
     </Compile>
+    <Compile Include="SelectorLenguaje.cs" />
     <Compile Include="Servidor.cs" />
     <Compile Include="esCR.Designer.cs">
       <AutoGen>True</AutoGen>

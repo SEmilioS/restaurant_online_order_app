@@ -2,7 +2,6 @@
 using System;
 using System.Windows.Forms;
 using System.Resources;
-using System.Configuration;
 
 namespace RestOrderingApp.Formularios.Registro
 {
@@ -22,18 +21,8 @@ namespace RestOrderingApp.Formularios.Registro
 
         private void SetLanguage()
         {
-            string selectedLanguage = ConfigurationManager.AppSettings["Language"]; // Get language setting from configuration
-
-            if (selectedLanguage == "es")
-            {
-                manager = new ResourceManager($"RestOrderingApp.esCR",
-                                                        typeof(Program).Assembly);
-            }
-            else if (selectedLanguage == "eng")
-            {
-                manager = new ResourceManager($"RestOrderingApp.engUS",
-                                            typeof(Program).Assembly);
-            }
+            SelectorLenguaje sl = new SelectorLenguaje();
+            manager = sl.CargarLenguaje();
             label1.Text = manager.GetString("regRest_titulo");
             label2.Text = manager.GetString("regRest_instrucciones");
             label3.Text = manager.GetString("regRest_id");

@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="bitacora_adminSesiones_M1_1" xml:space="preserve">
+    <value>Server: A session with the ID:</value>
+  </data>
+  <data name="bitacora_adminSesiones_M1_2" xml:space="preserve">
+    <value>has been removed for inactivity.</value>
+  </data>
   <data name="Bitacora_instrucciones" xml:space="preserve">
     <value>Below are all logged events:</value>
   </data>

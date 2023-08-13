@@ -61,6 +61,24 @@ namespace RestOrderingApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Server: A session with the ID:.
+        /// </summary>
+        internal static string bitacora_adminSesiones_M1_1 {
+            get {
+                return ResourceManager.GetString("bitacora_adminSesiones_M1_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to has been removed for inactivity..
+        /// </summary>
+        internal static string bitacora_adminSesiones_M1_2 {
+            get {
+                return ResourceManager.GetString("bitacora_adminSesiones_M1_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Below are all logged events:.
         /// </summary>
         internal static string Bitacora_instrucciones {
