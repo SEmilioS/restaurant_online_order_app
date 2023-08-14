@@ -79,11 +79,47 @@ namespace RestOrderingApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SQLDatabase: Successful database connection..
+        /// </summary>
+        internal static string bitacora_DB_M1 {
+            get {
+                return ResourceManager.GetString("bitacora_DB_M1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SQLDatabase: Error connecting to database: .
+        /// </summary>
+        internal static string bitacora_DB_M2 {
+            get {
+                return ResourceManager.GetString("bitacora_DB_M2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Below are all logged events:.
         /// </summary>
         internal static string Bitacora_instrucciones {
             get {
                 return ResourceManager.GetString("Bitacora_instrucciones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SQLDatabase:The Database has been accessed in method:.
+        /// </summary>
+        internal static string bitacora_Lector_DBAccess {
+            get {
+                return ResourceManager.GetString("bitacora_Lector_DBAccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SQLDatabase:Error getting Records in method:.
+        /// </summary>
+        internal static string bitacora_Lector_DBAccessError {
+            get {
+                return ResourceManager.GetString("bitacora_Lector_DBAccessError", resourceCulture);
             }
         }
         
@@ -507,6 +543,24 @@ namespace RestOrderingApp {
         internal static string Genero3 {
             get {
                 return ResourceManager.GetString("Genero3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aborted operation. Category does not exist in the database..
+        /// </summary>
+        internal static string lectorDB_M1_info {
+            get {
+                return ResourceManager.GetString("lectorDB_M1_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information error.
+        /// </summary>
+        internal static string lectorDB_M1_tipo {
+            get {
+                return ResourceManager.GetString("lectorDB_M1_tipo", resourceCulture);
             }
         }
         

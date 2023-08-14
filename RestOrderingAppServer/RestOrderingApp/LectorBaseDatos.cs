@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using System.Resources;
 
 namespace RestOrderingApp.DataBase.Lectura
 {
@@ -12,10 +13,13 @@ namespace RestOrderingApp.DataBase.Lectura
     {
         private static string StringConexion;
         private Semaphore semaforoConsulta;
+        private ResourceManager manager = new ResourceManager(typeof(Program));
         public LectorBaseDatos(string Conexion, Semaphore semaforo)
         {
             StringConexion = Conexion;
             semaforoConsulta = semaforo;
+            SelectorLenguaje sl = new SelectorLenguaje();
+            manager = sl.CargarLenguaje();
         }
 
         /// <summary>
@@ -60,7 +64,7 @@ namespace RestOrderingApp.DataBase.Lectura
                 using (SqlConnection conexion = new SqlConnection(StringConexion))
                 {
                     conexion.Open();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: ObtenerIDs a accesado la Base de Datos");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccess")} ObtenerIDs");
                     Program.bitacora.Nuevolog = true;
                     using (SqlCommand command = new SqlCommand(query, conexion))
                     {
@@ -80,7 +84,7 @@ namespace RestOrderingApp.DataBase.Lectura
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error al optener registros en metodo ObtenerIDs(): " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccessError")} ObtenerIDs(): " + ex.Message);
                 Program.bitacora.Nuevolog = true;
                 return null;
             }
@@ -106,7 +110,7 @@ namespace RestOrderingApp.DataBase.Lectura
                 {
                     string query = "SELECT IdCliente FROM Cliente";
                     conexion.Open();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: ObtenerIdCliente a accesado la Base de Datos");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccess")} ObtenerIdCliente()");
                     Program.bitacora.Nuevolog = true;
 
                     using (SqlCommand command = new SqlCommand(query, conexion))
@@ -127,7 +131,7 @@ namespace RestOrderingApp.DataBase.Lectura
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error al optener registros en metodo ObtenerIdCliente(): " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccessError")} ObtenerIdCliente(): " + ex.Message);
                 Program.bitacora.Nuevolog = true;
                 return null;
             }
@@ -154,7 +158,7 @@ namespace RestOrderingApp.DataBase.Lectura
                 using (SqlConnection conexion = new SqlConnection(StringConexion))
                 {
                     conexion.Open();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: ObtenerRestaurantes a accesado la Base de Datos");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccess")} ObtenerRestaurantes()");
                     Program.bitacora.Nuevolog = true;
 
                     using (SqlCommand command = new SqlCommand(query, conexion))
@@ -181,7 +185,7 @@ namespace RestOrderingApp.DataBase.Lectura
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error al optener registros en metodo ObtenerRestaurantes(): " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccessError")} ObtenerRestaurantes(): " + ex.Message);
                 Program.bitacora.Nuevolog = true;
                 return null;
             }
@@ -208,7 +212,7 @@ namespace RestOrderingApp.DataBase.Lectura
                 if (categorias == null)
                 {
                     MessageBox.Show("Operacion abortada. Categoria no exitente en la base de datos.", "Error de información", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error al obtener categoría en metodo ObtenerPlatos()");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccessError")} ObtenerPlatos()");
                     Program.bitacora.Nuevolog = true;
                     return null;
                 }
@@ -216,7 +220,7 @@ namespace RestOrderingApp.DataBase.Lectura
                 using (SqlConnection conexion = new SqlConnection(StringConexion))
                 {
                     conexion.Open();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: ObtenerPlatos a accesado la Base de Datos");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccess")} ObtenerPlatos()");
                     Program.bitacora.Nuevolog = true;
 
                     using (SqlCommand command = new SqlCommand(query, conexion))
@@ -243,7 +247,7 @@ namespace RestOrderingApp.DataBase.Lectura
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error al optener registros en metodo ObtenerPlatos(): " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccessError")} ObtenerPlatos(): " + ex.Message);
                 Program.bitacora.Nuevolog = true;
                 return null;
             }
@@ -270,7 +274,7 @@ namespace RestOrderingApp.DataBase.Lectura
                 using (SqlConnection conexion = new SqlConnection(StringConexion))
                 {
                     conexion.Open();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: ObtenerCategorias a accesado la Base de Datos");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccess")} ObtenerCategorias");
                     Program.bitacora.Nuevolog = true;
 
                     using (SqlCommand command = new SqlCommand(query, conexion))
@@ -295,7 +299,7 @@ namespace RestOrderingApp.DataBase.Lectura
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error al optener registros en metodo ObtenerRestaurantes(): " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccessError")} ObtenerRestaurantes(): " + ex.Message);
                 Program.bitacora.Nuevolog = true;
                 return null;
             }
@@ -322,7 +326,7 @@ namespace RestOrderingApp.DataBase.Lectura
                 using (SqlConnection conexion = new SqlConnection(StringConexion))
                 {
                     conexion.Open();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: ObtenerClientes a accesado la Base de Datos");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccess")} ObtenerClientes()");
                     Program.bitacora.Nuevolog = true;
 
                     using (SqlCommand command = new SqlCommand(query, conexion))
@@ -351,7 +355,7 @@ namespace RestOrderingApp.DataBase.Lectura
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error al obtener registros en metodo ObtenerClientes(): " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccessError")} ObtenerClientes(): " + ex.Message);
                 Program.bitacora.Nuevolog = true;
                 return null;
             }
@@ -377,8 +381,8 @@ namespace RestOrderingApp.DataBase.Lectura
                 CategoriaPlato[] categorias = ObtenerCategorias();
                 if (categorias == null)//si no hay categorias no se puede continuar 
                 {
-                    MessageBox.Show("Operacion abortada. Categoria no existente en la base de datos.", "Error de información", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error al obtener categoría en método ObtenerExtras()");
+                    MessageBox.Show( manager.GetString("lectorDB_M1_info"), manager.GetString("lectorDB_M1_tipo"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccessError")} ObtenerExtras()");
                     Program.bitacora.Nuevolog = true;
                     return null;
                 }
@@ -386,7 +390,7 @@ namespace RestOrderingApp.DataBase.Lectura
                 using (SqlConnection conexion = new SqlConnection(StringConexion))
                 {
                     conexion.Open();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: ObtenerExtras a accesado la Base de Datos");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccess")} ObtenerExtras()");
                     Program.bitacora.Nuevolog = true;
 
                     using (SqlCommand command = new SqlCommand(query, conexion))
@@ -415,7 +419,7 @@ namespace RestOrderingApp.DataBase.Lectura
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error al obtener registros en método ObtenerExtras(): " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccessError")} ObtenerExtras(): " + ex.Message);
                 Program.bitacora.Nuevolog = true;
                 return null;
             }
@@ -444,7 +448,7 @@ namespace RestOrderingApp.DataBase.Lectura
                 using (SqlConnection conexion = new SqlConnection(StringConexion))
                 {
                     conexion.Open();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: ObtenerPlatoRest a accesado la Base de Datos");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccess")} ObtenerPlatoRest()");
                     Program.bitacora.Nuevolog = true;
 
                     using (SqlCommand command = new SqlCommand(query, conexion))
@@ -497,7 +501,7 @@ namespace RestOrderingApp.DataBase.Lectura
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error al optener registros en metodo ObtenerPlatoRest(): " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccessError")} ObtenerPlatoRest(): " + ex.Message);
                 Program.bitacora.Nuevolog = true;
                 return null;
             }
@@ -523,7 +527,7 @@ namespace RestOrderingApp.DataBase.Lectura
                 using (SqlConnection conexion = new SqlConnection(StringConexion))
                 {
                     conexion.Open();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: ObtenerIdsNoDisponiblesPedidos a accesado la Base de Datos");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccess")} ObtenerIdsNoDisponiblesPedidos() ");
                     Program.bitacora.Nuevolog = true;
                     using (SqlCommand command = new SqlCommand(query, conexion))
                     {
@@ -545,7 +549,7 @@ namespace RestOrderingApp.DataBase.Lectura
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error al obtener registros en metodo ObtenerIdsNoDisponiblesPedidos(): " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccessError")} ObtenerIdsNoDisponiblesPedidos(): " + ex.Message);
                 Program.bitacora.Nuevolog = true;
                 return new int[] { 0 };
             }
@@ -629,7 +633,7 @@ namespace RestOrderingApp.DataBase.Lectura
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error al obtener IdPedidos en metodo ObtenerIdPedidosPorCliente(): " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccessError")} ObtenerIdPedidosPorCliente(): " + ex.Message);
                 Program.bitacora.Nuevolog = true;
                 return null;
             }
@@ -707,7 +711,7 @@ namespace RestOrderingApp.DataBase.Lectura
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error al obtener ExtraPedidos en metodo ObtenerExtraPedidosPorIdPedido(): " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccessError")} ObtenerExtraPedidosPorIdPedido(): " + ex.Message);
                 Program.bitacora.Nuevolog = true;
                 return null;
             }
@@ -779,7 +783,7 @@ namespace RestOrderingApp.DataBase.Lectura
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error al obtener Pedido en metodo ObtenerPedidoPorId(): " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccessError")} ObtenerPedidoPorId(): " + ex.Message);
                 Program.bitacora.Nuevolog = true;
                 return null;
             }
@@ -827,7 +831,7 @@ namespace RestOrderingApp.DataBase.Lectura
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error al obtener IdPlatos en metodo ObtenerIdPlatosPorIdPedido(): " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccessError")} ObtenerIdPlatosPorIdPedido(): " + ex.Message);
                 Program.bitacora.Nuevolog = true;
                 return null;
             }

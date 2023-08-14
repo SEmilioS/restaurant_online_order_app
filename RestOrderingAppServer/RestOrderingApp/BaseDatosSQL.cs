@@ -5,6 +5,7 @@ using System.Threading;
 using RestOrderingApp.DataBase.Lectura;
 using RestOrderingApp.DataBase.Escritura;
 using System.Configuration;
+using System.Resources;
 
 namespace RestOrderingApp.DataBase
 {
@@ -15,6 +16,7 @@ namespace RestOrderingApp.DataBase
         private static string StringConexion;
         private LectorBaseDatos lector;
         private EscritorBaseDatos escritor;
+        private ResourceManager manager = new ResourceManager(typeof(Program));
 
         /// <summary>
         /// Constructor de Base de datos
@@ -37,13 +39,17 @@ namespace RestOrderingApp.DataBase
                 using (SqlConnection conexion = new SqlConnection(StringConexion))
                 {
                     conexion.Open();
-                    string log = $"{DateTime.Now} BaseDatosSQL: Conexión a la base de datos existosa.";
+                    SelectorLenguaje sl = new SelectorLenguaje();
+                    manager = sl.CargarLenguaje();
+                    string log = $"{DateTime.Now} {manager.GetString("bitacora_DB_M1")}";
                     Program.bitacora.Registros.Add(log);
                 }
             }
             catch (Exception ex)
             {
-                string log = $"{DateTime.Now} BaseDatosSQL: Error al conectar con la base de datos: " + ex.Message;
+                SelectorLenguaje sl = new SelectorLenguaje();
+                manager = sl.CargarLenguaje();
+                string log = $"{DateTime.Now}  {manager.GetString("bitacora_DB_M2")}" + ex.Message;
                 Program.bitacora.Registros.Add(log);
             }
             finally

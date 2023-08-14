@@ -123,8 +123,20 @@
   <data name="bitacora_adminSesiones_M1_2" xml:space="preserve">
     <value>debido a inactividad.</value>
   </data>
+  <data name="bitacora_DB_M1" xml:space="preserve">
+    <value>BaseDatosSQL: Conexión a la base de datos existosa.</value>
+  </data>
+  <data name="bitacora_DB_M2" xml:space="preserve">
+    <value>BaseDatosSQL: Error al conectar con la base de datos: </value>
+  </data>
   <data name="Bitacora_instrucciones" xml:space="preserve">
     <value>A continuación se muestran todos los eventos registrados:</value>
+  </data>
+  <data name="bitacora_Lector_DBAccess" xml:space="preserve">
+    <value>BaseDatosSQL:  Se ha accesado la Base de Datos en metodo:</value>
+  </data>
+  <data name="bitacora_Lector_DBAccessError" xml:space="preserve">
+    <value>BaseDatosSQL: Error al obtener registros en metodo:</value>
   </data>
   <data name="Bitacora_titulo" xml:space="preserve">
     <value>Bitácora</value>
@@ -266,6 +278,12 @@
   </data>
   <data name="Genero3" xml:space="preserve">
     <value>O: otro</value>
+  </data>
+  <data name="lectorDB_M1_info" xml:space="preserve">
+    <value>Operacion abortada. Categoria no existente en la base de datos.</value>
+  </data>
+  <data name="lectorDB_M1_tipo" xml:space="preserve">
+    <value>Error de información</value>
   </data>
   <data name="regCat_descripcion" xml:space="preserve">
     <value>Descripción de la categoría:</value>

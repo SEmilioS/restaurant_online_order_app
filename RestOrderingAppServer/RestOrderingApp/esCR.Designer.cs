@@ -79,11 +79,47 @@ namespace RestOrderingApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BaseDatosSQL: Conexión a la base de datos existosa..
+        /// </summary>
+        internal static string bitacora_DB_M1 {
+            get {
+                return ResourceManager.GetString("bitacora_DB_M1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BaseDatosSQL: Error al conectar con la base de datos: .
+        /// </summary>
+        internal static string bitacora_DB_M2 {
+            get {
+                return ResourceManager.GetString("bitacora_DB_M2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to A continuación se muestran todos los eventos registrados:.
         /// </summary>
         internal static string Bitacora_instrucciones {
             get {
                 return ResourceManager.GetString("Bitacora_instrucciones", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BaseDatosSQL:  Se ha accesado la Base de Datos en metodo:.
+        /// </summary>
+        internal static string bitacora_Lector_DBAccess {
+            get {
+                return ResourceManager.GetString("bitacora_Lector_DBAccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BaseDatosSQL: Error al obtener registros en metodo:.
+        /// </summary>
+        internal static string bitacora_Lector_DBAccessError {
+            get {
+                return ResourceManager.GetString("bitacora_Lector_DBAccessError", resourceCulture);
             }
         }
         
@@ -507,6 +543,24 @@ namespace RestOrderingApp {
         internal static string Genero3 {
             get {
                 return ResourceManager.GetString("Genero3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operacion abortada. Categoria no existente en la base de datos..
+        /// </summary>
+        internal static string lectorDB_M1_info {
+            get {
+                return ResourceManager.GetString("lectorDB_M1_info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error de información.
+        /// </summary>
+        internal static string lectorDB_M1_tipo {
+            get {
+                return ResourceManager.GetString("lectorDB_M1_tipo", resourceCulture);
             }
         }
         
