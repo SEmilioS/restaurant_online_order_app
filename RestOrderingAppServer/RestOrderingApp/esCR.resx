@@ -129,6 +129,33 @@
   <data name="bitacora_DB_M2" xml:space="preserve">
     <value>BaseDatosSQL: Error al conectar con la base de datos: </value>
   </data>
+  <data name="bitacora_Escritor_CatPlato" xml:space="preserve">
+    <value>Categoria de Plato</value>
+  </data>
+  <data name="bitacora_Escritor_Cliente" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="bitacora_Escritor_DBAccessError" xml:space="preserve">
+    <value>BaseDatosSQL: Error al agregar registro a la base de datos: </value>
+  </data>
+  <data name="bitacora_Escritor_Extra" xml:space="preserve">
+    <value>Extra</value>
+  </data>
+  <data name="bitacora_Escritor_PedidoAdd" xml:space="preserve">
+    <value>BaseDatosSQL: Se agregó un nuevo pedido a la base de datos.</value>
+  </data>
+  <data name="bitacora_Escritor_Plato" xml:space="preserve">
+    <value>Plato</value>
+  </data>
+  <data name="bitacora_Escritor_PlatoRest" xml:space="preserve">
+    <value>Platos por Restaurante</value>
+  </data>
+  <data name="bitacora_Escritor_RegistroAdd" xml:space="preserve">
+    <value>BaseDatosSQL: Se agregó un nuevo registro a la base de datos de tipo: </value>
+  </data>
+  <data name="bitacora_Escritor_Rest" xml:space="preserve">
+    <value>Restaurante</value>
+  </data>
   <data name="Bitacora_instrucciones" xml:space="preserve">
     <value>A continuación se muestran todos los eventos registrados:</value>
   </data>
@@ -137,6 +164,102 @@
   </data>
   <data name="bitacora_Lector_DBAccessError" xml:space="preserve">
     <value>BaseDatosSQL: Error al obtener registros en metodo:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M1" xml:space="preserve">
+    <value>Servidor: Rest-Uned-Cliente a solicitado check de conexión</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M10" xml:space="preserve">
+    <value>a solicitado array Platos</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M11" xml:space="preserve">
+    <value>a solicitado check de conexión</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M12" xml:space="preserve">
+    <value>a solicitado desconexión</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M13" xml:space="preserve">
+    <value>a solicitado procesar un pedido</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M14" xml:space="preserve">
+    <value>a solicitado informacion de Pedidos</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M15" xml:space="preserve">
+    <value>a solicitado informacion de Cliente</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M16" xml:space="preserve">
+    <value>Servidor: Se ha enviado información de Pedidos a Usuario:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M17" xml:space="preserve">
+    <value>Servidor: Se ha enviado información de Restaurante a Usuario:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M18" xml:space="preserve">
+    <value>Servidor: Se ha enviado información de PlatoRestaurante a Usuario:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M19" xml:space="preserve">
+    <value>Servidor: Se ha enviado información de Extras a Usuario:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M2" xml:space="preserve">
+    <value>Servidor: Se ha enviado confirmacion de conexión a Rest-Uned-Cliente</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M20" xml:space="preserve">
+    <value>Servidor: Se ha enviado información de Platos a Usuario:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M21" xml:space="preserve">
+    <value>Servidor: Se ha enviado confirmacion de conexión a Usuario:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M22" xml:space="preserve">
+    <value>Servidor: Se ha cerrado la conexión del Usuario:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M23" xml:space="preserve">
+    <value>Servidor: Se ha enviado confirmacion de Pedido Procesado al Usuario:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M24" xml:space="preserve">
+    <value>Servidor: Se ha enviado error de Pedido Procesado al Usuario:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M25" xml:space="preserve">
+    <value>Servidor: Se ha enviado error de Pedidos consultados al Usuario:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M26" xml:space="preserve">
+    <value>Servidor: Se ha enviado informacion de Pedidos a Usuario:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M27" xml:space="preserve">
+    <value>Servidor: Se ha enviado informacion de cliente a Usuario:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M28" xml:space="preserve">
+    <value>Servidor: Usuario no autenticado o sesión expirada; Se ha denegado respuesta.</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M3" xml:space="preserve">
+    <value>Servidor: Se ha autenticado un cliente con Id de Sesión:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M4" xml:space="preserve">
+    <value>Servidor: Se ha denegado acceso a un Usuario no registrado en DB.</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M5" xml:space="preserve">
+    <value>Servidor: Usuario:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M6" xml:space="preserve">
+    <value>a solicitado array Ids Pedidos pasados</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M7" xml:space="preserve">
+    <value>a solicitado array Restaurantes</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M8" xml:space="preserve">
+    <value>a solicitado array PlatoRestaurante</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M9" xml:space="preserve">
+    <value>a solicitado array Extras</value>
+  </data>
+  <data name="bitacora_Servidor_M1" xml:space="preserve">
+    <value>Servidor: Servidor iniciado. Esperando conecciones...</value>
+  </data>
+  <data name="bitacora_Servidor_M2" xml:space="preserve">
+    <value>Servidor: Se ha recibido una solicitud...</value>
+  </data>
+  <data name="bitacora_Servidor_M3" xml:space="preserve">
+    <value>Servidor: Error al responder a la solicitud recibida: </value>
+  </data>
+  <data name="bitacora_Servidor_M4" xml:space="preserve">
+    <value>Servidor: Se recibió solicitud de cliente autenticado. </value>
   </data>
   <data name="Bitacora_titulo" xml:space="preserve">
     <value>Bitácora</value>

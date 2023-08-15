@@ -2,6 +2,7 @@
 using System;
 using System.Data.SqlClient;
 using System.Threading;
+using System.Resources;
 
 namespace RestOrderingApp.DataBase.Escritura
 {
@@ -9,10 +10,13 @@ namespace RestOrderingApp.DataBase.Escritura
     {
         private static string StringConexion;
         private Semaphore semaforoEscritura;
+        private ResourceManager manager = new ResourceManager(typeof(Program));
         public EscritorBaseDatos(string Conexion, Semaphore semaforo)
         {
             StringConexion = Conexion;
             semaforoEscritura = semaforo;
+            SelectorLenguaje sl = new SelectorLenguaje();
+            manager = sl.CargarLenguaje();
         }
 
         /// <summary>
@@ -28,7 +32,7 @@ namespace RestOrderingApp.DataBase.Escritura
                 using (SqlConnection conexion = new SqlConnection(StringConexion))
                 {
                     conexion.Open();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: AgregarRestaurante a accesado la Base de Datos");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccess")} AgregarRestaurante()");
                     Program.bitacora.Nuevolog = true;
 
                     string insertQuery = "INSERT INTO Restaurante (IdRestaurante, Nombre, Direccion, Estado, Telefono) " +
@@ -41,14 +45,14 @@ namespace RestOrderingApp.DataBase.Escritura
                         command.Parameters.AddWithValue("@Direccion", restaurante.Direccion);
                         command.Parameters.AddWithValue("@Estado", restaurante.Estado);
                         command.Parameters.AddWithValue("@Telefono", restaurante.Telefono);
-                        Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Se agregó un nuevo Restaurante a la base de datos");
+                        Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Escritor_RegistroAdd")} {manager.GetString("bitacora_Escritor_Rest")}");
                         command.ExecuteNonQuery();
                     }
                 }
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error al agregar Restaurante a la base de datos: " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Escritor_DBAccessError")}" + ex.Message);
                 Program.bitacora.Nuevolog = true;
             }
             finally
@@ -70,7 +74,7 @@ namespace RestOrderingApp.DataBase.Escritura
                 using (SqlConnection conexion = new SqlConnection(StringConexion))
                 {
                     conexion.Open();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: AgregarCategoriaPlato a accesado la Base de Datos");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccess")} AgregarCategoriaPlato()");
                     Program.bitacora.Nuevolog = true;
 
                     string insertQuery = "INSERT INTO CategoriaPlato (IdCategoria, Descripcion, Estado) " +
@@ -81,7 +85,7 @@ namespace RestOrderingApp.DataBase.Escritura
                         command.Parameters.AddWithValue("@Id", categoria.ID);
                         command.Parameters.AddWithValue("@Nombre", categoria.Descripcion);
                         command.Parameters.AddWithValue("@Categoria", categoria.Estado);
-                        Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Se agregó una nueva Categoria a la base de datos");
+                        Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Escritor_RegistroAdd")} {manager.GetString("bitacora_Escritor_CatPlato")}");
                         Program.bitacora.Nuevolog = true;
                         command.ExecuteNonQuery();
                     }
@@ -89,7 +93,7 @@ namespace RestOrderingApp.DataBase.Escritura
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error agregando Categoria a la base de datos: " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Escritor_DBAccessError")}" + ex.Message);
                 Program.bitacora.Nuevolog = true;
             }
             finally
@@ -111,7 +115,7 @@ namespace RestOrderingApp.DataBase.Escritura
                 using (SqlConnection conexion = new SqlConnection(StringConexion))
                 {
                     conexion.Open();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: AgregarPlato a accesado la Base de Datos");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccess")} AgregarPlato()");
                     Program.bitacora.Nuevolog = true;
 
                     string insertQuery = "INSERT INTO Plato (IdPlato, Nombre, IdCategoria, Precio) " +
@@ -123,7 +127,7 @@ namespace RestOrderingApp.DataBase.Escritura
                         command.Parameters.AddWithValue("@Nombre", plato.Nombre);
                         command.Parameters.AddWithValue("@Categoria", plato.Categoria.ID);
                         command.Parameters.AddWithValue("@Precio", plato.Precio);
-                        Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Se agregó un nuevo Plato a la base de datos");
+                        Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Escritor_RegistroAdd")} {manager.GetString("bitacora_Escritor_Plato")}");
                         Program.bitacora.Nuevolog = true;
                         command.ExecuteNonQuery();
                     }
@@ -131,7 +135,7 @@ namespace RestOrderingApp.DataBase.Escritura
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error agregando Plato a la base de datos: " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Escritor_DBAccessError")}" + ex.Message);
                 Program.bitacora.Nuevolog = true;
             }
             finally
@@ -152,7 +156,7 @@ namespace RestOrderingApp.DataBase.Escritura
                 using (SqlConnection conexion = new SqlConnection(StringConexion))
                 {
                     conexion.Open();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: AgregarCliente a accesado la Base de Datos");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccess")} AgregarCliente()");
                     Program.bitacora.Nuevolog = true;
 
                     string insertQuery = "INSERT INTO Cliente (IdCliente, Nombre, PrimerApellido, SegundoApellido, FechaNacimiento, Genero) " +
@@ -167,14 +171,14 @@ namespace RestOrderingApp.DataBase.Escritura
                         command.Parameters.AddWithValue("@FechaN", cliente.Fecha_nacimiento);
                         command.Parameters.AddWithValue("@Genero", cliente.Genero);
                         command.ExecuteNonQuery();
-                        Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Se agregó un nuevo Cliente a la base de datos");
+                        Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Escritor_RegistroAdd")} {manager.GetString("bitacora_Escritor_Cliente")}");
                         Program.bitacora.Nuevolog = true;
                     }
                 }
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error agregando cliente a la base de datos: " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Escritor_DBAccessError")}" + ex.Message);
                 Program.bitacora.Nuevolog = true;
             }
             finally
@@ -196,7 +200,7 @@ namespace RestOrderingApp.DataBase.Escritura
                 using (SqlConnection conexion = new SqlConnection(StringConexion))
                 {
                     conexion.Open();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: AgregarPlatoRestaurante a accesado la Base de Datos");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccess")} AgregarPlatoRestaurante()");
                     Program.bitacora.Nuevolog = true;
 
                     foreach (Plato plato in platoRestaurante.Platos)
@@ -210,7 +214,7 @@ namespace RestOrderingApp.DataBase.Escritura
                             command.Parameters.AddWithValue("@Restaurante", (object)platoRestaurante.Restaurante.ID);
                             command.Parameters.AddWithValue("@FechaAsig", platoRestaurante.Fecha_asignacion);
                             command.Parameters.AddWithValue("@Plato", plato.ID);
-                            Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Se agregó una asociacion de Platos al restuarante {platoRestaurante.Restaurante.Nombre} a la base de datos");
+                            Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Escritor_RegistroAdd")} {manager.GetString("bitacora_Escritor_PlatoRest")}");
                             Program.bitacora.Nuevolog = true;
                             command.ExecuteNonQuery();
                         }
@@ -219,7 +223,7 @@ namespace RestOrderingApp.DataBase.Escritura
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error agregando PlatoRestaurante a la base de datos: " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now}  {manager.GetString("bitacora_Escritor_DBAccessError")}" + ex.Message);
                 Program.bitacora.Nuevolog = true;
             }
             finally
@@ -241,7 +245,7 @@ namespace RestOrderingApp.DataBase.Escritura
                 using (SqlConnection conexion = new SqlConnection(StringConexion))
                 {
                     conexion.Open();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: AgregarExtra a accesado la Base de Datos");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccess")} AgregarExtra()");
                     Program.bitacora.Nuevolog = true;
 
                     string insertQuery = "INSERT INTO Extra (IdExtra, Descripcion, IdCategoria, Estado, Precio) " +
@@ -254,7 +258,7 @@ namespace RestOrderingApp.DataBase.Escritura
                         command.Parameters.AddWithValue("@Categoria", ex.Categoria.ID);
                         command.Parameters.AddWithValue("@Estado", ex.Estado);
                         command.Parameters.AddWithValue("@Precio", ex.Precio);
-                        Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Se agregó un nuevo Extra a la base de datos");
+                        Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Escritor_RegistroAdd")} {manager.GetString("bitacora_Escritor_Extra")}");
                         Program.bitacora.Nuevolog = true;
                         command.ExecuteNonQuery();
                     }
@@ -262,7 +266,7 @@ namespace RestOrderingApp.DataBase.Escritura
             }
             catch (Exception exc)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error agregando Extra a la base de datos: " + exc.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now}  {manager.GetString("bitacora_Escritor_DBAccessError")}" + exc.Message);
                 Program.bitacora.Nuevolog = true;
             }
             finally
@@ -312,7 +316,7 @@ namespace RestOrderingApp.DataBase.Escritura
                 using (SqlConnection conexion = new SqlConnection(StringConexion))
                 {
                     conexion.Open();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: AgregarPedido a accesado la Base de Datos");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Lector_DBAccess")} AgregarPedido()");
                     Program.bitacora.Nuevolog = true;
 
                     foreach (Plato plato in pedido.Plato)
@@ -326,7 +330,7 @@ namespace RestOrderingApp.DataBase.Escritura
                             command.Parameters.AddWithValue("@Cliente", Idclente);
                             command.Parameters.AddWithValue("@Plato", plato.ID);
                             command.Parameters.AddWithValue("@Fecha", fecha);
-                            Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Se agregó plato al pedido con id: {idPedido} a la base de datos");
+                            Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Escritor_PedidoAdd")}");
                             Program.bitacora.Nuevolog = true;
                             command.ExecuteNonQuery();
                         }
@@ -347,8 +351,6 @@ namespace RestOrderingApp.DataBase.Escritura
                                         command.Parameters.AddWithValue("@Id", idPedido);
                                         command.Parameters.AddWithValue("@Plato", exp.Plato.ID);
                                         command.Parameters.AddWithValue("@Extra", ex.ID);
-                                        Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Se agregó un extra al plato del pedido con id: {idPedido} a la base de datos");
-                                        Program.bitacora.Nuevolog = true;
                                         command.ExecuteNonQuery();
                                     }
                                 }
@@ -360,7 +362,7 @@ namespace RestOrderingApp.DataBase.Escritura
             }
             catch (Exception exc)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} BaseDatosSQL: Error agregando Extra a la base de datos: " + exc.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now}  {manager.GetString("bitacora_Escritor_DBAccessError")}" + exc.Message);
                 Program.bitacora.Nuevolog = true;
                 return false;
             }

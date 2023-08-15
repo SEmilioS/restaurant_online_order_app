@@ -97,6 +97,87 @@ namespace RestOrderingApp {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dish category.
+        /// </summary>
+        internal static string bitacora_Escritor_CatPlato {
+            get {
+                return ResourceManager.GetString("bitacora_Escritor_CatPlato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client.
+        /// </summary>
+        internal static string bitacora_Escritor_Cliente {
+            get {
+                return ResourceManager.GetString("bitacora_Escritor_Cliente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SQLDatabase: Error adding record to database:.
+        /// </summary>
+        internal static string bitacora_Escritor_DBAccessError {
+            get {
+                return ResourceManager.GetString("bitacora_Escritor_DBAccessError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extra.
+        /// </summary>
+        internal static string bitacora_Escritor_Extra {
+            get {
+                return ResourceManager.GetString("bitacora_Escritor_Extra", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SQLDatabase: A new order was added to the database..
+        /// </summary>
+        internal static string bitacora_Escritor_PedidoAdd {
+            get {
+                return ResourceManager.GetString("bitacora_Escritor_PedidoAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dish.
+        /// </summary>
+        internal static string bitacora_Escritor_Plato {
+            get {
+                return ResourceManager.GetString("bitacora_Escritor_Plato", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dish association.
+        /// </summary>
+        internal static string bitacora_Escritor_PlatoRest {
+            get {
+                return ResourceManager.GetString("bitacora_Escritor_PlatoRest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SQLDatabase: A new record was added to the database. Record Type:.
+        /// </summary>
+        internal static string bitacora_Escritor_RegistroAdd {
+            get {
+                return ResourceManager.GetString("bitacora_Escritor_RegistroAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restaurant.
+        /// </summary>
+        internal static string bitacora_Escritor_Rest {
+            get {
+                return ResourceManager.GetString("bitacora_Escritor_Rest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Below are all logged events:.
         /// </summary>
         internal static string Bitacora_instrucciones {
@@ -120,6 +201,294 @@ namespace RestOrderingApp {
         internal static string bitacora_Lector_DBAccessError {
             get {
                 return ResourceManager.GetString("bitacora_Lector_DBAccessError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Rest-Uned-Client to requested connection check.
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M1 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to requested array Plates..
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M10 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to requested connection check..
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M11 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to requested disconnection..
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M12 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to requested to process an order..
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M13 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M13", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to requested information of Orders..
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M14 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M14", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to requested customer information..
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M15 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M15", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Order information has been sent to User:.
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M16 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M16", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Restaurant information has been sent to User:.
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M17 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M17", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Information from PlatoRestaurante has been sent to User:.
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M18 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M18", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Extras information has been sent to User:.
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M19 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M19", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Connection confirmation has been sent to Rest-Uned-Cliente.
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M2 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Dishes information has been sent to User:.
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M20 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M20", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Connection confirmation has been sent to User:.
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M21 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: User connection has been closed. ID Deleted:.
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M22 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M22", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Confirmation of Processed Order has been sent to the User:.
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M23 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M23", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Order Processed error has been sent to the User:.
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M24 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M24", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Orders consulted error has been sent to the User:.
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M25 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M25", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Order information has been sent to User:.
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M26 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M26", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Client information has been sent to User:.
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M27 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M27", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: User not authenticated or session timed out; Response denied..
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M28 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M28", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: A client has been authenticated with Session Id:.
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M3 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Access has been denied to a User not registered in DB..
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M4 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: User:.
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M5 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to requested array Ids Past Orders..
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M6 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to requested array Restaurants..
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M7 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to requested array PlateRestaurant..
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M8 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to requested array Extras..
+        /// </summary>
+        internal static string bitacora_ProcesadorS_M9 {
+            get {
+                return ResourceManager.GetString("bitacora_ProcesadorS_M9", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Server started. Waiting for connections....
+        /// </summary>
+        internal static string bitacora_Servidor_M1 {
+            get {
+                return ResourceManager.GetString("bitacora_Servidor_M1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: A request has been received....
+        /// </summary>
+        internal static string bitacora_Servidor_M2 {
+            get {
+                return ResourceManager.GetString("bitacora_Servidor_M2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Error responding to received request:.
+        /// </summary>
+        internal static string bitacora_Servidor_M3 {
+            get {
+                return ResourceManager.GetString("bitacora_Servidor_M3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Server: Authenticated client request received..
+        /// </summary>
+        internal static string bitacora_Servidor_M4 {
+            get {
+                return ResourceManager.GetString("bitacora_Servidor_M4", resourceCulture);
             }
         }
         

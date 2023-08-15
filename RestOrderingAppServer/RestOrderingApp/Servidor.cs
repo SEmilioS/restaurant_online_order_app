@@ -8,6 +8,7 @@ using System.Threading;
 using System.Configuration;
 using RestOrderingApp.Server.Solicitudes;
 using RestOrderingApp.Server.Sesiones;
+using System.Resources;
 
 namespace RestOrderingApp.Server
 {
@@ -17,6 +18,7 @@ namespace RestOrderingApp.Server
         private bool ServidorActivo = true;
         private AdministradorSesiones administradorSesiones;
         private ProcesadorSolicitudes procesadorSolicitudes;
+        private ResourceManager manager = new ResourceManager(typeof(Program));
 
         public Servidor()
         {
@@ -43,8 +45,10 @@ namespace RestOrderingApp.Server
         /// </summary>
         public void Start()
         {
+            SelectorLenguaje sl = new SelectorLenguaje();
+            manager = sl.CargarLenguaje();
             tcpListener.Start();
-            Program.bitacora.Registros.Add($"{DateTime.Now} Servidor: Servidor iniciado. Esperando conecciones...");
+            Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Servidor_M1")}");
             Program.bitacora.Nuevolog = true;
             administradorSesiones = new AdministradorSesiones();
             procesadorSolicitudes = new ProcesadorSolicitudes();
@@ -54,7 +58,7 @@ namespace RestOrderingApp.Server
                 while (ServidorActivo == true)
                 {
                     TcpClient client = tcpListener.AcceptTcpClient();
-                    Program.bitacora.Registros.Add($"{DateTime.Now} Servidor: Se ha recibido una solicitud...");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Servidor_M2")}");
                     Program.bitacora.Nuevolog = true;
 
                     //Crea un thread para resolver correctamente cada solicitud
@@ -64,7 +68,7 @@ namespace RestOrderingApp.Server
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} Servidor: Error al aceptar solicitud recibida: " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Servidor_M3")}" + ex.Message);
                 Program.bitacora.Nuevolog = true;
             }
         }
@@ -124,7 +128,7 @@ namespace RestOrderingApp.Server
 
                 if (solicitud.StartsWith("IdSesion:")) //Solicitudes que inician con IDSesion provienen de un Cliente autenticado
                 {
-                    Program.bitacora.Registros.Add($"{DateTime.Now} Servidor: Se recibió solicitud de cliente autenticado:");
+                    Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Servidor_M4")}");
                     Program.bitacora.Nuevolog = true;
                     //Informacion en la solicitud se divide en base a ";"
                     string[] PartesSolicitud = solicitud.Substring("IdSesion:".Length).Split(';');
@@ -229,7 +233,7 @@ namespace RestOrderingApp.Server
             }
             catch (Exception ex)
             {
-                Program.bitacora.Registros.Add($"{DateTime.Now} Servidor: Error al procesar solicitud: " + ex.Message);
+                Program.bitacora.Registros.Add($"{DateTime.Now} {manager.GetString("bitacora_Servidor_M3")}" + ex.Message);
                 Program.bitacora.Nuevolog = true;
             }
         }

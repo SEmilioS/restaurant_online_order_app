@@ -129,6 +129,33 @@
   <data name="bitacora_DB_M2" xml:space="preserve">
     <value>SQLDatabase: Error connecting to database: </value>
   </data>
+  <data name="bitacora_Escritor_CatPlato" xml:space="preserve">
+    <value>Dish category</value>
+  </data>
+  <data name="bitacora_Escritor_Cliente" xml:space="preserve">
+    <value>Client</value>
+  </data>
+  <data name="bitacora_Escritor_DBAccessError" xml:space="preserve">
+    <value>SQLDatabase: Error adding record to database:</value>
+  </data>
+  <data name="bitacora_Escritor_Extra" xml:space="preserve">
+    <value>Extra</value>
+  </data>
+  <data name="bitacora_Escritor_PedidoAdd" xml:space="preserve">
+    <value>SQLDatabase: A new order was added to the database.</value>
+  </data>
+  <data name="bitacora_Escritor_Plato" xml:space="preserve">
+    <value>Dish</value>
+  </data>
+  <data name="bitacora_Escritor_PlatoRest" xml:space="preserve">
+    <value>Dish association</value>
+  </data>
+  <data name="bitacora_Escritor_RegistroAdd" xml:space="preserve">
+    <value>SQLDatabase: A new record was added to the database. Record Type:</value>
+  </data>
+  <data name="bitacora_Escritor_Rest" xml:space="preserve">
+    <value>Restaurant</value>
+  </data>
   <data name="Bitacora_instrucciones" xml:space="preserve">
     <value>Below are all logged events:</value>
   </data>
@@ -137,6 +164,102 @@
   </data>
   <data name="bitacora_Lector_DBAccessError" xml:space="preserve">
     <value>SQLDatabase:Error getting Records in method:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M1" xml:space="preserve">
+    <value>Server: Rest-Uned-Client to requested connection check</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M10" xml:space="preserve">
+    <value>requested array Plates.</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M11" xml:space="preserve">
+    <value>requested connection check.</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M12" xml:space="preserve">
+    <value>requested disconnection.</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M13" xml:space="preserve">
+    <value>requested to process an order.</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M14" xml:space="preserve">
+    <value>requested information of Orders.</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M15" xml:space="preserve">
+    <value>requested customer information.</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M16" xml:space="preserve">
+    <value>Server: Order information has been sent to User:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M17" xml:space="preserve">
+    <value>Server: Restaurant information has been sent to User:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M18" xml:space="preserve">
+    <value>Server: Information from PlatoRestaurante has been sent to User:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M19" xml:space="preserve">
+    <value>Server: Extras information has been sent to User:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M2" xml:space="preserve">
+    <value>Server: Connection confirmation has been sent to Rest-Uned-Cliente</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M20" xml:space="preserve">
+    <value>Server: Dishes information has been sent to User:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M21" xml:space="preserve">
+    <value>Server: Connection confirmation has been sent to User:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M22" xml:space="preserve">
+    <value>Server: User connection has been closed. ID Deleted:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M23" xml:space="preserve">
+    <value>Server: Confirmation of Processed Order has been sent to the User:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M24" xml:space="preserve">
+    <value>Server: Order Processed error has been sent to the User:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M25" xml:space="preserve">
+    <value>Server: Orders consulted error has been sent to the User:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M26" xml:space="preserve">
+    <value>Server: Order information has been sent to User:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M27" xml:space="preserve">
+    <value>Server: Client information has been sent to User:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M28" xml:space="preserve">
+    <value>Server: User not authenticated or session timed out; Response denied.</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M3" xml:space="preserve">
+    <value>Server: A client has been authenticated with Session Id:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M4" xml:space="preserve">
+    <value>Server: Access has been denied to a User not registered in DB.</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M5" xml:space="preserve">
+    <value>Server: User:</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M6" xml:space="preserve">
+    <value>requested array Ids Past Orders.</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M7" xml:space="preserve">
+    <value>requested array Restaurants.</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M8" xml:space="preserve">
+    <value>requested array PlateRestaurant.</value>
+  </data>
+  <data name="bitacora_ProcesadorS_M9" xml:space="preserve">
+    <value>requested array Extras.</value>
+  </data>
+  <data name="bitacora_Servidor_M1" xml:space="preserve">
+    <value>Server: Server started. Waiting for connections...</value>
+  </data>
+  <data name="bitacora_Servidor_M2" xml:space="preserve">
+    <value>Server: A request has been received...</value>
+  </data>
+  <data name="bitacora_Servidor_M3" xml:space="preserve">
+    <value>Server: Error responding to received request:</value>
+  </data>
+  <data name="bitacora_Servidor_M4" xml:space="preserve">
+    <value>Server: Authenticated client request received.</value>
   </data>
   <data name="Bitacora_titulo" xml:space="preserve">
     <value>Log</value>
